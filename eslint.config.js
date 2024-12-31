@@ -10,7 +10,6 @@ import tseslint from 'typescript-eslint';
 export default [
   {
     files: ['**/*.{js,mjs,cjs,ts,tsx}'],
-    ignores:['!**/.server', '!**/.client'],
 
   },
   {
@@ -98,5 +97,14 @@ export default [
       '@stylistic/ts/semi': 'error',
       '@typescript-eslint/no-shadow': 'error',
     },
+  },
+  {
+    files: ['scripts/**/*.ts'],
+    rules: {
+      'no-console': 'off',
+    },
+  },
+  {
+    ignores:['!**/.server', '!**/.client', '**/templates/'],
   },
 ];

@@ -6,12 +6,19 @@ import tailwindcssNesting from 'tailwindcss/nesting';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
-const vitePlugins = [reactRouter(), tsconfigPaths()];
+const vitePlugins = [];
+
+if (!process.env.VITEST) {
+  vitePlugins.push(reactRouter());
+}
+
+vitePlugins.push(tsconfigPaths());
 
 if (process.env.NETLIFY_DEPLOYMENT === 'true') {
   vitePlugins.push(netlifyPlugin());
 }
 
+/// <reference types="vitest" />
 export default defineConfig({
   css: {
     postcss: {
@@ -19,4 +26,7 @@ export default defineConfig({
     },
   },
   plugins: vitePlugins,
+  test: {
+    environment: 'happy-dom',
+  },
 });

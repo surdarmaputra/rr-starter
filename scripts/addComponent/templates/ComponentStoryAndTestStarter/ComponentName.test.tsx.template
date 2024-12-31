@@ -1,0 +1,16 @@
+import { render, screen } from '@testing-library/react';
+
+import { ComponentName } from './ComponentName';
+
+describe('ComponentName', () => {
+  it('renders with data-testid', async () => {
+    const dataTestId = 'sample-test-id';
+    render(<ComponentName dataTestId={dataTestId} />);
+    await screen.findByTestId(dataTestId);
+  });
+
+  it('renders snapshot', async () => {
+    const { container } = render(<ComponentName />);
+    expect(container).toMatchSnapshot();
+  });
+});
