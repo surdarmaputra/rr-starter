@@ -8,7 +8,7 @@
     "format:fix": "prettier --write",
     "lint": "eslint --max-warnings=0 --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
     "lint:fix": "bun run lint --fix",
-    "prepare": "husky",
+    "prepare": "lefthook install",
     "start": "cross-env NODE_ENV=production react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc"
   },
@@ -34,7 +34,7 @@
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-unused-imports": "^4.1.4",
     "globals": "^15.14.0",
-    "husky": "^9.1.7",
+    "lefthook": "^1.10.1",
     "postcss": "^8.4.49",
     "prettier": "3.4.2",
     "prettier-eslint": "^16.3.0",
