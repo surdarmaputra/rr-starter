@@ -6,9 +6,11 @@ import tailwindcssNesting from 'tailwindcss/nesting';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
+const isStorybook = process.argv[1]?.includes('storybook');
+const shouldUseReactRouterPlugin = !isStorybook && !process.env.VITEST;
 const vitePlugins = [];
 
-if (!process.env.VITEST) {
+if (shouldUseReactRouterPlugin) {
   vitePlugins.push(reactRouter());
 }
 

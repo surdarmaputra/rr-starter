@@ -1,4 +1,4 @@
-import { Welcome } from '../welcome/welcome';
+import { Button } from '~/modules/core/components/Button/Button';
 
 export function meta() {
   return [
@@ -8,5 +8,7 @@ export function meta() {
 }
 
 export default function Home() {
-  return <Welcome />;
+  return (
+    <Button>Test</Button>
+  );
 }

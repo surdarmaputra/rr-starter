@@ -1,6 +1,6 @@
-import { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { ComponentName, ComponentNameProps } from './ComponentName';
+import { ComponentName, type ComponentNameProps } from './ComponentName';
 
 type Story = StoryObj<typeof ComponentName>;
 

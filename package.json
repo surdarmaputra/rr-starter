@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "cross-env NODE_ENV=production react-router build",
+    "build:storybook": "storybook build",
     "component:add-starter": "bun scripts/addComponent/index.ts",
     "dev": "react-router dev",
     "format:fix": "prettier --write",
@@ -11,6 +12,7 @@
     "lint:fix": "bun run lint --fix",
     "prepare": "lefthook install",
     "start": "cross-env NODE_ENV=production react-router-serve ./build/server/index.js",
+    "storybook": "storybook dev -p 6006",
     "test": "vitest",
     "typecheck": "react-router typegen && tsc"
   },
@@ -30,9 +32,18 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.3",
     "@eslint/js": "^9.17.0",
     "@netlify/vite-plugin-react-router": "^1.0.0",
     "@react-router/dev": "^7.1.1",
+    "@storybook/addon-essentials": "^8.4.7",
+    "@storybook/addon-interactions": "^8.4.7",
+    "@storybook/addon-onboarding": "^8.4.7",
+    "@storybook/addon-themes": "^8.4.7",
+    "@storybook/blocks": "^8.4.7",
+    "@storybook/react": "^8.4.7",
+    "@storybook/react-vite": "^8.4.7",
+    "@storybook/test": "^8.4.7",
     "@stylistic/eslint-plugin-ts": "^2.12.1",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.1.0",
@@ -44,6 +55,7 @@
     "eslint": "^9.17.0",
     "eslint-plugin-react": "^7.37.3",
     "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-storybook": "^0.11.1",
     "eslint-plugin-unused-imports": "^4.1.4",
     "globals": "^15.14.0",
     "happy-dom": "^16.2.9",
@@ -52,11 +64,17 @@
     "prettier": "3.4.2",
     "prettier-eslint": "^16.3.0",
     "prettier-plugin-tailwindcss": "^0.6.9",
+    "storybook": "^8.4.7",
     "tailwindcss": "^3.4.16",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.19.0",
     "vite": "^5.4.11",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^2.1.8"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   }
 }
