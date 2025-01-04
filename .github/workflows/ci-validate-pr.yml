@@ -24,7 +24,7 @@ jobs:
       - uses: ./.github/actions/cache-dependencies
       - name: Get changed files
         id: changed-files
-        uses: tj-actions/changed-files@v42
+        uses: tj-actions/changed-files@v45
         with:
           safe_output: false
       - name: Lint
