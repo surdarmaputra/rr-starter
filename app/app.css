@@ -1,3 +1,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #f59e0b; /* Amber 500 */
+    --color-primary-disabled: #fef3c7; /* Amber 100 */
+    --color-secondary: #374151; /* Slate 700 */
+    --color-secondary-disabled: #cbd5e1; /* Slate 300 */
+    --color-success: #16a34a; /* Green 600 */
+    --color-success-disabled: #d1fae5; /* Green 100 */
+    --color-warning: #ca8a04; /* Yellow 600 */
+    --color-warning-disabled: #fef9c3; /* Yellow 100 */
+    --color-danger: #dc2626; /* Red 600 */
+    --color-danger-disabled: #fee2e2; /* Red 100 */
+    --color-divider: #e2e8f0; /* Slate 200 */
+    --color-text-title: #000000; /* Black */
+    --color-text-body: #374151; /* Slate 600 */
+    --color-text-caption: #64748b; /* Slate 400 */
+    --color-text-disabled: #94a3b8; /* Slate 300 */
+
+    /* Hover color tokens */
+    --color-primary-hover: #d97706; /* Amber 600 */
+    --color-secondary-hover: #1e293b; /* Slate 800 */
+    --color-success-hover: #15803d; /* Green 700 */
+    --color-warning-hover: #b45309; /* Yellow 700 */
+    --color-danger-hover: #b91c1c; /* Red 700 */
+  }
+
+  .dark {
+    --color-primary: #d97706; /* Amber 400 */
+    --color-primary-disabled: #fcd34d; /* Amber 300 */
+    --color-secondary: #1e293b; /* Slate 600 */
+    --color-secondary-disabled: #334155; /* Slate 400 */
+    --color-success: #22c55e; /* Green 500 */
+    --color-success-disabled: #6ee7b7; /* Green 300 */
+    --color-warning: #f59e0b; /* Yellow 500 */
+    --color-warning-disabled: #fde047; /* Yellow 300 */
+    --color-danger: #ef4444; /* Red 500 */
+    --color-danger-disabled: #fca5a5; /* Red 300 */
+    --color-divider: #64748b; /* Slate 700 */
+    --color-text-title: #f1f5f9; /* Slate 100 */
+    --color-text-body: #94a3b8; /* Slate 300 */
+    --color-text-caption: #64748b; /* Slate 400 */
+    --color-text-disabled: #475569; /* Slate 500 */
+
+    /* Hover color tokens */
+    --color-primary-hover: #f59e0b; /* Amber 500 */
+    --color-secondary-hover: #64748b; /* Slate 700 */
+    --color-success-hover: #16a34a; /* Green 600 */
+    --color-warning-hover: #ca8a04; /* Yellow 600 */
+    --color-danger-hover: #dc2626; /* Red 600 */
+  }
+}

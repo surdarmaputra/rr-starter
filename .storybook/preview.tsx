@@ -1,7 +1,9 @@
 import '../app/app.css';
 
-import { withThemeByClassName } from '@storybook/addon-themes';
 import type { Preview } from '@storybook/react';
+
+import { darkTheme } from './constants';
+import { DocsContainer } from './DocsContainer';
 
 const preview: Preview = {
   parameters: {
@@ -11,17 +13,15 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    darkMode: {
+      classTarget: 'html',
+      dark: darkTheme,
+      stylePreview: true,
+    },
+    docs: {
+      container: DocsContainer,
+    },
   },
-  decorators: [
-    withThemeByClassName({
-      themes: {
-        // nameOfTheme: 'classNameForTheme',
-        light: '',
-        dark: 'dark',
-      },
-      defaultTheme: 'light',
-    }),
-  ],
   tags: ['autodocs'],
 };
 

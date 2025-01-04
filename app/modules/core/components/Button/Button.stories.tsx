@@ -14,6 +14,7 @@ export default meta;
 export const Default: Story = {
   args: {
     children: 'Button',
+    variant: 'primary',
   },
   render: (args: ButtonProps) => <Button {...args} />,
 };

@@ -1,0 +1,13 @@
+.sbdocs-wrapper,
+.sbdocs-preview,
+.sbdocs-preview .sb-bar,
+.docblock-code-toggle,
+.docblock-argstable button,
+.docblock-argstable select,
+.docblock-argstable textarea {
+  @apply dark:bg-slate-900;
+}
+
+.docblock-argstable td {
+  @apply dark:!bg-slate-900;
+}
