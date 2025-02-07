@@ -95,12 +95,13 @@ async function copyTemplate({
 }
 
 // Fix import alias in shadcn generated component
-async function adjustShadcnGeneratedComponent(
-  filePath: string,
-): Promise<void> {
+async function adjustShadcnGeneratedComponent(filePath: string): Promise<void> {
   try {
     const content = await fs.readFile(filePath, 'utf-8');
-    const updatedContent = content.replaceAll('~/lib/utils', '~/libs/shadcn/utils');
+    const updatedContent = content.replaceAll(
+      '~/lib/utils',
+      '~/libs/shadcn/utils',
+    );
     await fs.writeFile(filePath, updatedContent);
   } catch (error) {
     console.error(`Error replacing content in ${filePath}:`, error);
@@ -133,11 +134,7 @@ async function generateComponent({
       process.exit(1);
     }
 
-    const targetDir = path.resolve(
-      destinationDir,
-      ...parts,
-      componentName,
-    );
+    const targetDir = path.resolve(destinationDir, ...parts, componentName);
 
     const templateDir = path.resolve(__dirname, 'templates', template);
 
@@ -152,7 +149,9 @@ async function generateComponent({
 
     runCommand(`bunx --bun shadcn@latest add ${componentNameKebab}`);
     await fs.mkdir(targetDir, { recursive: true });
-    runCommand(`mv ${CORE_COMPONENTS_DIR}/${componentNameKebab}.tsx ${targetDir}/${componentName}.tsx`);
+    runCommand(
+      `mv ${CORE_COMPONENTS_DIR}/${componentNameKebab}.tsx ${targetDir}/${componentName}.tsx`,
+    );
     await adjustShadcnGeneratedComponent(`${targetDir}/${componentName}.tsx`);
     await copyTemplate({
       templateDir,
