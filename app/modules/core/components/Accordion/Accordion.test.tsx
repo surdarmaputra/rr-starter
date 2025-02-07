@@ -1,18 +1,21 @@
 import { fireEvent, render, screen, within } from '@testing-library/react';
 import { describe, expect, test } from 'vitest';
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './Accordion';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from './Accordion';
 
 describe('Accordion', () => {
   test('renders with data-testid', async () => {
     const dataTestId = 'sample-test-id';
     render(
-      <Accordion dataTestId={dataTestId} type='single'>
+      <Accordion dataTestId={dataTestId} type="single">
         <AccordionItem value="item-1">
           <AccordionTrigger>Trigger</AccordionTrigger>
-          <AccordionContent>
-            Content
-          </AccordionContent>
+          <AccordionContent>Content</AccordionContent>
         </AccordionItem>
       </Accordion>,
     );

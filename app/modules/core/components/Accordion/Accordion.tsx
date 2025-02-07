@@ -1,13 +1,18 @@
-import type { AccordionMultipleProps, AccordionSingleProps } from '@radix-ui/react-accordion';
+import type {
+  AccordionMultipleProps,
+  AccordionSingleProps,
+} from '@radix-ui/react-accordion';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { ChevronDown } from 'lucide-react';
 import * as React from 'react';
 
-import { cn } from '~/libs/shadcdn/utils';
+import { cn } from '~/libs/shadcn/utils';
 
 import type { TestableComponentProps } from '../../types';
 
-export type AccordionProps = (AccordionSingleProps | AccordionMultipleProps) & React.HTMLAttributes<HTMLDivElement> & TestableComponentProps;
+export type AccordionProps = (AccordionSingleProps | AccordionMultipleProps) &
+  React.HTMLAttributes<HTMLDivElement> &
+  TestableComponentProps;
 
 const Accordion = React.forwardRef<
   React.ComponentRef<typeof AccordionPrimitive.Root>,

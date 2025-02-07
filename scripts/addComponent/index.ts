@@ -1,7 +1,10 @@
+import { execSync } from 'child_process';
+import { program } from 'commander';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-// Helper function to convert input to PascalCase
+const CORE_COMPONENTS_DIR = 'app/modules/core/components';
+
 function toPascalCase(input: string): string {
   return input
     .trim() // Trim extra spaces
@@ -9,14 +12,28 @@ function toPascalCase(input: string): string {
     .replace(/^(.)/, (c) => c.toUpperCase()); // Ensure the first letter is uppercase
 }
 
+function toKebabCase(input: string): string {
+  return input
+    .trim() // Trim extra spaces
+    .replace(/[-_\s]+/g, '-') // Convert snake_case, kebab-case, and spaces to kebab-case
+    .replace(/^(.)/, (c) => c.toLowerCase()); // Ensure the first letter is lowercase
+}
+
 // Replace occurrences of "ComponentName" in file content
-async function replaceContent(
-  filePath: string,
-  componentName: string,
-): Promise<void> {
+async function replaceContent({
+  filePath,
+  componentName,
+  storyTitle,
+}: {
+  filePath: string;
+  componentName: string;
+  storyTitle: string;
+}): Promise<void> {
   try {
     const content = await fs.readFile(filePath, 'utf-8');
-    const updatedContent = content.replaceAll('ComponentName', componentName);
+    const updatedContent = content
+      .replaceAll('ComponentName', componentName)
+      .replaceAll('StoryTitle', storyTitle);
     await fs.writeFile(filePath, updatedContent);
   } catch (error) {
     console.error(`Error replacing content in ${filePath}:`, error);
@@ -25,14 +42,24 @@ async function replaceContent(
 }
 
 // Copy template files and replace "ComponentName" with the given name
-async function copyTemplate(
-  templateDir: string,
-  targetDir: string,
-  componentName: string,
-): Promise<void> {
-  try {
-    await fs.mkdir(targetDir, { recursive: true });
+async function copyTemplate({
+  templateDir,
+  targetDir,
+  componentName,
+}: {
+  templateDir: string;
+  targetDir: string;
+  componentName: string;
+}): Promise<void> {
+  const storyTitle = targetDir
+    .replace(process.cwd(), '')
+    .replace('app/modules/', '')
+    .replace(/^\//, '')
+    .split('/')
+    .map(toPascalCase)
+    .join('/');
 
+  try {
     const files = await fs.readdir(templateDir);
     await Promise.all(
       files.map(async (file) => {
@@ -43,10 +70,18 @@ async function copyTemplate(
 
         const stats = await fs.stat(templateFilePath);
         if (stats.isDirectory()) {
-          await copyTemplate(templateFilePath, targetFilePath, componentName);
+          await copyTemplate({
+            templateDir: templateFilePath,
+            targetDir: targetFilePath,
+            componentName,
+          });
         } else {
           await fs.copyFile(templateFilePath, targetFilePath);
-          await replaceContent(targetFilePath, componentName);
+          await replaceContent({
+            filePath: targetFilePath,
+            componentName,
+            storyTitle,
+          });
         }
       }),
     );
@@ -59,14 +94,39 @@ async function copyTemplate(
   }
 }
 
-// Main function to generate component
-async function generateComponent(
-  componentPath: string,
-  template: string = 'VariantComponentStarter',
+// Fix import alias in shadcn generated component
+async function adjustShadcnGeneratedComponent(
+  filePath: string,
 ): Promise<void> {
   try {
-    const parts = componentPath.split('/').map((part) => toPascalCase(part));
-    const componentName = parts.pop(); // Last part is the actual component name in PascalCase
+    const content = await fs.readFile(filePath, 'utf-8');
+    const updatedContent = content.replaceAll('~/lib/utils', '~/libs/shadcn/utils');
+    await fs.writeFile(filePath, updatedContent);
+  } catch (error) {
+    console.error(`Error replacing content in ${filePath}:`, error);
+    throw error;
+  }
+}
+
+function runCommand(command: string): void {
+  console.log('Running command:', command);
+  execSync(command, { stdio: 'inherit' });
+}
+
+// Main function to generate component
+async function generateComponent({
+  componentPath,
+  destinationDir,
+  template,
+}: {
+  componentPath: string;
+  destinationDir: string;
+  template: string;
+}): Promise<void> {
+  try {
+    const parts = componentPath.split('/');
+    const componentName = toPascalCase(parts.pop() || ''); // Last part is the actual component name in PascalCase
+    const componentNameKebab = toKebabCase(componentName || '');
 
     if (!componentName) {
       console.error('Error: Invalid component path.');
@@ -74,8 +134,7 @@ async function generateComponent(
     }
 
     const targetDir = path.resolve(
-      __dirname,
-      '../../app/modules/core/components',
+      destinationDir,
       ...parts,
       componentName,
     );
@@ -91,7 +150,17 @@ async function generateComponent(
       process.exit(1);
     }
 
-    await copyTemplate(templateDir, targetDir, componentName);
+    runCommand(`bunx --bun shadcn@latest add ${componentNameKebab}`);
+    await fs.mkdir(targetDir, { recursive: true });
+    runCommand(`mv ${CORE_COMPONENTS_DIR}/${componentNameKebab}.tsx ${targetDir}/${componentName}.tsx`);
+    await adjustShadcnGeneratedComponent(`${targetDir}/${componentName}.tsx`);
+    await copyTemplate({
+      templateDir,
+      targetDir,
+      componentName,
+    });
+    runCommand(`bun run format:fix ${targetDir}`);
+    runCommand(`bun run lint:fix ${targetDir}`);
     console.log(
       `Component "${componentName}" has been generated in ${targetDir}.`,
     );
@@ -103,26 +172,23 @@ async function generateComponent(
 
 async function runCLI(): Promise<void> {
   try {
-    const args = process.argv.slice(2);
-    const componentPath = args[0];
-    const template = args[1] || 'ComponentStoryAndTestStarter';
+    program
+      .option('-d, --destination <destination>', 'Destination directory')
+      .option('-t, --template <template>', 'Template name')
+      .argument('<ComponentName>', 'Component name in PascalCase');
 
-    if (!componentPath) {
-      console.error('Error: Please specify a component path.');
-      console.log(`
-        Usage: yarn weblib:gen-component <ComponentName> [template]
+    program.parse();
 
-        Example:
-        yarn weblib:gen-component ButtonContextual
-        yarn weblib:gen-component ButtonContextual ComponentStoryAndTestStarter
-        yarn weblib:gen-component Indicator/Shimmer ComponentStoryAndTestStarter
+    const options = program.opts();
+    const componentPath = program.args[0];
+    const destinationDir = options.destination || CORE_COMPONENTS_DIR;
+    const template = options.template || 'ComponentStoryAndTestStarter';
 
-        Default template is ComponentStoryAndTestStarter
-      `);
-      process.exit(1);
-    }
-
-    await generateComponent(componentPath, template);
+    await generateComponent({
+      componentPath,
+      destinationDir,
+      template,
+    });
   } catch (error) {
     console.error('Error running CLI:', error);
     process.exit(1);

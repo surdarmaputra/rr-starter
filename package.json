@@ -5,7 +5,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production react-router build",
     "build:storybook": "storybook build",
-    "component:add-starter": "bun scripts/addComponent/index.ts",
+    "component:add": "bun scripts/addComponent/index.ts",
     "dev": "react-router dev",
     "format:fix": "prettier --write",
     "lint": "eslint --max-warnings=0 --cache --cache-location ./node_modules/.cache/eslint",
@@ -50,6 +50,7 @@
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
     "autoprefixer": "^10.4.20",
+    "commander": "^13.1.0",
     "cross-env": "^7.0.3",
     "eslint": "^9.17.0",
     "eslint-plugin-react": "^7.37.3",
