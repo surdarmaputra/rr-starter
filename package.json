@@ -12,11 +12,12 @@
     "lint:fix": "bun run lint --fix",
     "prepare": "lefthook install",
     "start": "cross-env NODE_ENV=production react-router-serve ./build/server/index.js",
-    "storybook": "storybook dev -p 6006",
+    "start:storybook": "storybook dev -p 6006",
     "test": "vitest",
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
+    "@radix-ui/react-accordion": "^1.2.2",
     "@radix-ui/react-slot": "^1.1.1",
     "@react-router/fs-routes": "^7.1.1",
     "@react-router/node": "^7.1.1",

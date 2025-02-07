@@ -30,7 +30,7 @@ export function ColorTokens() {
       <div className="grid grid-cols-6 gap-2">
         {Object.entries(COLOR_CLASSES).map(([key, className]) => (
           <div
-            className={`flex h-16 items-center justify-center rounded text-sm text-white ${className} `}
+            className={`flex h-16 items-center justify-center rounded text-sm text-black ${className} `}
             key={key}
           >
             {key}
