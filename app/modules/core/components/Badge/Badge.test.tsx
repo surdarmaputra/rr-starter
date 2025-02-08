@@ -5,11 +5,7 @@ import { Badge } from './Badge';
 
 describe('Badge', () => {
   function renderComponent() {
-    return render(
-      <Badge data-testid="badge-testid">
-        Label
-      </Badge>,
-    );
+    return render(<Badge data-testid="badge-testid">Label</Badge>);
   }
 
   test('renders with data-testid', async () => {
