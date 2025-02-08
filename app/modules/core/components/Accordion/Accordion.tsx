@@ -17,10 +17,9 @@ export type AccordionProps = (AccordionSingleProps | AccordionMultipleProps) &
 const Accordion = React.forwardRef<
   React.ComponentRef<typeof AccordionPrimitive.Root>,
   AccordionProps
->(({ className, dataTestId, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <AccordionPrimitive.Root
     className={cn('w-full text-sm', className)}
-    data-testid={dataTestId}
     ref={ref}
     {...props}
   />

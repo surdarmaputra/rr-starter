@@ -15,8 +15,9 @@ function toPascalCase(input: string): string {
 function toKebabCase(input: string): string {
   return input
     .trim() // Trim extra spaces
-    .replace(/[-_\s]+/g, '-') // Convert snake_case, kebab-case, and spaces to kebab-case
-    .replace(/^(.)/, (c) => c.toLowerCase()); // Ensure the first letter is lowercase
+    .replace(/([a-z])([A-Z])/g, '$1-$2') // Convert camelCase/PascalCase to kebab-case
+    .replace(/[-_\s]+/g, '-') // Convert snake_case and spaces to kebab-case
+    .toLowerCase(); // Convert everything to lowercase
 }
 
 // Replace occurrences of "ComponentName" in file content

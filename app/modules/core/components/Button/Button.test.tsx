@@ -6,7 +6,7 @@ import { Button } from './Button';
 describe('Button', () => {
   test('renders with data-testid', async () => {
     const dataTestId = 'sample-test-id';
-    render(<Button dataTestId={dataTestId} />);
+    render(<Button data-testid={dataTestId} />);
     await screen.findByTestId(dataTestId);
   });
 

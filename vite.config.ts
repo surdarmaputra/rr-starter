@@ -30,5 +30,6 @@ export default defineConfig({
   plugins: vitePlugins,
   test: {
     environment: 'happy-dom',
+    globals: true,
   },
 });

@@ -12,7 +12,7 @@ describe('Accordion', () => {
   test('renders with data-testid', async () => {
     const dataTestId = 'sample-test-id';
     render(
-      <Accordion dataTestId={dataTestId} type="single">
+      <Accordion data-testid={dataTestId} type="single">
         <AccordionItem value="item-1">
           <AccordionTrigger>Trigger</AccordionTrigger>
           <AccordionContent>Content</AccordionContent>
