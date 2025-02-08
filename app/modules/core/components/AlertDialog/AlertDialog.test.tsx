@@ -1,9 +1,28 @@
-import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
+import {
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+  within,
+} from '@testing-library/react';
 import { useState } from 'react';
 import { describe, expect, test } from 'vitest';
 
 import { Button } from '../Button/Button';
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, type AlertDialogContentProps, AlertDialogDescription, type AlertDialogDescriptionProps, AlertDialogFooter, type AlertDialogFooterProps, AlertDialogHeader, AlertDialogTitle, type AlertDialogTitleProps } from './AlertDialog';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  type AlertDialogContentProps,
+  AlertDialogDescription,
+  type AlertDialogDescriptionProps,
+  AlertDialogFooter,
+  type AlertDialogFooterProps,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  type AlertDialogTitleProps,
+} from './AlertDialog';
 
 interface TestComponentProps {
   contentProps?: AlertDialogContentProps;
@@ -23,14 +42,25 @@ export function TestComponent({
     <>
       <Button onClick={() => setIsDialogOpen(true)}>Toggle Dialog</Button>
       <AlertDialog onOpenChange={setIsDialogOpen} open={isDialogOpen}>
-        <AlertDialogContent data-testid='dialog-content-testid' {...contentProps}>
-          <AlertDialogHeader >
-            <AlertDialogTitle data-testid="dialog-title-testid" {...titleProps}>Are you absolutely sure?</AlertDialogTitle>
-            <AlertDialogDescription data-testid='dialog-description-testid' {...descriptionProps}>
+        <AlertDialogContent
+          data-testid="dialog-content-testid"
+          {...contentProps}
+        >
+          <AlertDialogHeader>
+            <AlertDialogTitle data-testid="dialog-title-testid" {...titleProps}>
+              Are you absolutely sure?
+            </AlertDialogTitle>
+            <AlertDialogDescription
+              data-testid="dialog-description-testid"
+              {...descriptionProps}
+            >
               This is a description.
             </AlertDialogDescription>
           </AlertDialogHeader>
-          <AlertDialogFooter data-testid='dialog-footer-testid' {...footerProps}>
+          <AlertDialogFooter
+            data-testid="dialog-footer-testid"
+            {...footerProps}
+          >
             <AlertDialogCancel>Cancel</AlertDialogCancel>
             <AlertDialogAction>Continue</AlertDialogAction>
           </AlertDialogFooter>
@@ -47,12 +77,14 @@ describe('AlertDialog', () => {
     descriptionProps,
     footerProps,
   }: TestComponentProps = {}) {
-    return render(<TestComponent
-      contentProps={contentProps}
-      descriptionProps={descriptionProps}
-      footerProps={footerProps}
-      titleProps={titleProps}
-    />);
+    return render(
+      <TestComponent
+        contentProps={contentProps}
+        descriptionProps={descriptionProps}
+        footerProps={footerProps}
+        titleProps={titleProps}
+      />,
+    );
   }
 
   test('renders with data-testid', async () => {
@@ -62,7 +94,9 @@ describe('AlertDialog', () => {
 
     const dialog = await screen.findByTestId('dialog-content-testid');
     const title = await within(dialog).findByTestId('dialog-title-testid');
-    const description = await within(dialog).findByTestId('dialog-description-testid');
+    const description = await within(dialog).findByTestId(
+      'dialog-description-testid',
+    );
     const footer = await within(dialog).findByTestId('dialog-footer-testid');
 
     await within(title).findByText(/Are you absolutely sure?/);
@@ -85,6 +119,8 @@ describe('AlertDialog', () => {
     const dialog = await screen.findByTestId('dialog-content-testid');
 
     fireEvent.click(await within(dialog).findByText(/Cancel/));
-    await waitFor(() => expect(screen.queryByTestId('dialog-content-testid')).toBeNull());
+    await waitFor(() =>
+      expect(screen.queryByTestId('dialog-content-testid')).toBeNull(),
+    );
   });
 });

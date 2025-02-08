@@ -2,7 +2,16 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 
 import { Button } from '../Button/Button';
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from './AlertDialog';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from './AlertDialog';
 
 type Story = StoryObj<typeof AlertDialog>;
 
@@ -19,14 +28,16 @@ function SampleComponent() {
     <>
       <Button onClick={() => setIsDialogOpen(true)}>Toggle Dialog</Button>
       <AlertDialog onOpenChange={setIsDialogOpen} open={isDialogOpen}>
-        <AlertDialogContent data-testid='dialog-content-testid'>
-          <AlertDialogHeader >
-            <AlertDialogTitle data-testid="dialog-title-testid">Are you absolutely sure?</AlertDialogTitle>
-            <AlertDialogDescription data-testid='dialog-description-testid'>
+        <AlertDialogContent data-testid="dialog-content-testid">
+          <AlertDialogHeader>
+            <AlertDialogTitle data-testid="dialog-title-testid">
+              Are you absolutely sure?
+            </AlertDialogTitle>
+            <AlertDialogDescription data-testid="dialog-description-testid">
               This is a description.
             </AlertDialogDescription>
           </AlertDialogHeader>
-          <AlertDialogFooter data-testid='dialog-footer-testid'>
+          <AlertDialogFooter data-testid="dialog-footer-testid">
             <AlertDialogCancel>Cancel</AlertDialogCancel>
             <AlertDialogAction>Continue</AlertDialogAction>
           </AlertDialogFooter>
@@ -34,7 +45,6 @@ function SampleComponent() {
       </AlertDialog>
     </>
   );
-
 }
 
 export const Default: Story = {
@@ -61,7 +71,5 @@ export const Default: Story = {
       },
     },
   },
-  render: () => (
-    <SampleComponent />
-  ),
+  render: () => <SampleComponent />,
 };

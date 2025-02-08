@@ -29,7 +29,7 @@ AlertDialogOverlay.displayName = AlertDialogPrimitive.Overlay.displayName;
 
 export interface AlertDialogContentProps
   extends React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Content>,
-  TestableComponentProps { }
+    TestableComponentProps {}
 
 const AlertDialogContent = React.forwardRef<
   React.ComponentRef<typeof AlertDialogPrimitive.Content>,
@@ -51,12 +51,9 @@ AlertDialogContent.displayName = AlertDialogPrimitive.Content.displayName;
 
 export interface AlertDialogHeaderProps
   extends React.HTMLAttributes<HTMLDivElement>,
-  TestableComponentProps { }
+    TestableComponentProps {}
 
-const AlertDialogHeader = ({
-  className,
-  ...props
-}: AlertDialogHeaderProps) => (
+const AlertDialogHeader = ({ className, ...props }: AlertDialogHeaderProps) => (
   <div
     className={cn(
       'flex flex-col space-y-2 text-center sm:text-left',
@@ -69,12 +66,9 @@ AlertDialogHeader.displayName = 'AlertDialogHeader';
 
 export interface AlertDialogFooterProps
   extends React.HTMLAttributes<HTMLDivElement>,
-  TestableComponentProps { }
+    TestableComponentProps {}
 
-const AlertDialogFooter = ({
-  className,
-  ...props
-}: AlertDialogFooterProps) => (
+const AlertDialogFooter = ({ className, ...props }: AlertDialogFooterProps) => (
   <div
     className={cn(
       'flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2',
@@ -87,7 +81,7 @@ AlertDialogFooter.displayName = 'AlertDialogFooter';
 
 export interface AlertDialogTitleProps
   extends React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Title>,
-  TestableComponentProps { }
+    TestableComponentProps {}
 
 const AlertDialogTitle = React.forwardRef<
   React.ComponentRef<typeof AlertDialogPrimitive.Title>,
@@ -102,8 +96,10 @@ const AlertDialogTitle = React.forwardRef<
 AlertDialogTitle.displayName = AlertDialogPrimitive.Title.displayName;
 
 export interface AlertDialogDescriptionProps
-  extends React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description>,
-  TestableComponentProps { }
+  extends React.ComponentPropsWithoutRef<
+      typeof AlertDialogPrimitive.Description
+    >,
+    TestableComponentProps {}
 
 const AlertDialogDescription = React.forwardRef<
   React.ComponentRef<typeof AlertDialogPrimitive.Description>,
