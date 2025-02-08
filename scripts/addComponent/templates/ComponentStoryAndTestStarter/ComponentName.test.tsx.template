@@ -4,14 +4,17 @@ import { describe, expect, test } from 'vitest';
 import { ComponentName } from './ComponentName';
 
 describe('ComponentName', () => {
+  function renderComponent() {
+     render(<ComponentName data-testid="component-testid" />);
+  }
+
   test('renders with data-testid', async () => {
-    const dataTestId = 'sample-test-id';
-    render(<ComponentName data-testid={dataTestId} />);
-    await screen.findByTestId(dataTestId);
+    renderComponent();
+    await screen.findByTestId('component-testid');
   });
 
   test('renders snapshot', async () => {
-    const { container } = render(<ComponentName />);
+    const { container } = renderComponent();
     expect(container).toMatchSnapshot();
   });
 });
