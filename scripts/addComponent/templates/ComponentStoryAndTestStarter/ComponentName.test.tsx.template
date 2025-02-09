@@ -5,12 +5,12 @@ import { ComponentName } from './ComponentName';
 
 describe('ComponentName', () => {
   function renderComponent() {
-     render(<ComponentName data-testid="component-testid" />);
+    return render(<ComponentName data-testid="ComponentName-testid" />);
   }
 
   test('renders with data-testid', async () => {
     renderComponent();
-    await screen.findByTestId('component-testid');
+    await screen.findByTestId('ComponentName-testid');
   });
 
   test('renders snapshot', async () => {
