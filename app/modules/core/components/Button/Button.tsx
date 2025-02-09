@@ -17,21 +17,21 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: 'bg-primary text-black hover:bg-primaryHover',
-        secondary: 'bg-secondary text-white hover:bg-secondaryHover',
-        success: 'bg-success text-white hover:bg-successHover',
-        warning: 'bg-warning text-white hover:bg-warningHover',
-        danger: 'bg-danger text-white hover:bg-dangerHover',
+        primary: 'bg-primary text-white hover:bg-primary-hover',
+        secondary: 'bg-secondary text-white hover:bg-secondary-hover',
+        success: 'bg-success text-white hover:bg-success-hover',
+        warning: 'bg-warning text-white hover:bg-warning-hover',
+        danger: 'bg-danger text-white hover:bg-danger-hover',
         'primary-outlined':
-          'border border-primary text-primary hover:bg-primaryHover hover:text-white',
+          'border border-primary text-primary hover:bg-primary-hover hover:text-white',
         'secondary-outlined':
-          'border border-secondary text-secondary hover:bg-secondaryHover hover:text-white',
+          'border border-secondary text-secondary hover:bg-secondary-hover hover:text-white',
         'success-outlined':
-          'border border-success text-success hover:bg-successHover hover:text-white',
+          'border border-success text-success hover:bg-success-hover hover:text-white',
         'warning-outlined':
-          'border border-warning text-warning hover:bg-warningHover hover:text-white',
+          'border border-warning text-warning hover:bg-warning-hover hover:text-white',
         'danger-outlined':
-          'border border-danger text-danger hover:bg-dangerHover hover:text-white',
+          'border border-danger text-danger hover:bg-danger-hover hover:text-white',
         link: 'text-textTitle underline-offset-4 hover:underline',
       },
       size: {

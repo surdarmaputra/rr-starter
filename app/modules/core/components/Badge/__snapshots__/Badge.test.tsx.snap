@@ -3,7 +3,7 @@
 exports[`Badge > renders snapshot 1`] = `
 <div>
   <div
-    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-slate-950 focus:ring-offset-2 dark:border-slate-800 dark:focus:ring-slate-300 border-transparent bg-secondary text-white hover:bg-secondaryHover dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/80"
+    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-slate-950 focus:ring-offset-2 dark:border-slate-800 dark:focus:ring-slate-300 border-transparent bg-secondary text-white hover:bg-secondary-hover dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/80"
     data-testid="badge-testid"
   >
     Label
