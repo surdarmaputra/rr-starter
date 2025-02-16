@@ -39,6 +39,7 @@ export default {
         'danger-disabled': 'var(--color-danger-disabled)',
         'danger-hover': 'var(--color-danger-hover)',
         divider: 'var(--color-divider)',
+        accent: 'var(--color-accent)',
         'text-title': 'var(--color-text-title)',
         'text-body': 'var(--color-text-body)',
         'text-caption': 'var(--color-text-caption)',

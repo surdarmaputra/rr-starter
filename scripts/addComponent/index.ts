@@ -99,10 +99,9 @@ async function copyTemplate({
 async function adjustShadcnGeneratedComponent(filePath: string): Promise<void> {
   try {
     const content = await fs.readFile(filePath, 'utf-8');
-    const updatedContent = content.replaceAll(
-      '~/lib/utils',
-      '~/libs/shadcn/utils',
-    );
+    const updatedContent = content
+      .replaceAll('~/lib/utils', '~/libs/shadcn/utils')
+      .replaceAll('React.ElementRef', 'React.ComponentRef');
     await fs.writeFile(filePath, updatedContent);
   } catch (error) {
     console.error(`Error replacing content in ${filePath}:`, error);
