@@ -114,6 +114,22 @@ function runCommand(command: string): void {
   execSync(command, { stdio: 'inherit' });
 }
 
+async function generateShadcnComponent({
+  componentName,
+  targetDir,
+}: {
+  componentName: string;
+  targetDir: string;
+}) {
+  const componentNameKebab = toKebabCase(componentName || '');
+  runCommand(`bunx --bun shadcn@latest add ${componentNameKebab}`);
+  await fs.mkdir(targetDir, { recursive: true });
+  runCommand(
+    `mv ${CORE_COMPONENTS_DIR}/${componentNameKebab}.tsx ${targetDir}/${componentName}.tsx`,
+  );
+  await adjustShadcnGeneratedComponent(`${targetDir}/${componentName}.tsx`);
+}
+
 // Main function to generate component
 async function generateComponent({
   componentPath,
@@ -127,7 +143,6 @@ async function generateComponent({
   try {
     const parts = componentPath.split('/');
     const componentName = toPascalCase(parts.pop() || ''); // Last part is the actual component name in PascalCase
-    const componentNameKebab = toKebabCase(componentName || '');
 
     if (!componentName) {
       console.error('Error: Invalid component path.');
@@ -135,9 +150,7 @@ async function generateComponent({
     }
 
     const targetDir = path.resolve(destinationDir, ...parts, componentName);
-
     const templateDir = path.resolve(__dirname, 'templates', template);
-
     const templateExists = await fs
       .access(templateDir)
       .then(() => true)
@@ -147,12 +160,10 @@ async function generateComponent({
       process.exit(1);
     }
 
-    runCommand(`bunx --bun shadcn@latest add ${componentNameKebab}`);
-    await fs.mkdir(targetDir, { recursive: true });
-    runCommand(
-      `mv ${CORE_COMPONENTS_DIR}/${componentNameKebab}.tsx ${targetDir}/${componentName}.tsx`,
-    );
-    await adjustShadcnGeneratedComponent(`${targetDir}/${componentName}.tsx`);
+    if (template === 'ComponentStoryAndTestStarter') {
+      await generateShadcnComponent({ componentName, targetDir });
+    }
+
     await copyTemplate({
       templateDir,
       targetDir,

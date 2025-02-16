@@ -1,0 +1,63 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Drawer > renders snapshot 1`] = `
+<div
+  aria-describedby="radix-:r8:"
+  aria-labelledby="radix-:r7:"
+  class="fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950"
+  data-state="open"
+  data-testid="DrawerContent-testid"
+  data-vaul-animate="true"
+  data-vaul-custom-container="false"
+  data-vaul-delayed-snap-points="false"
+  data-vaul-drawer=""
+  data-vaul-drawer-direction="bottom"
+  data-vaul-snap-points="false"
+  id="radix-:r6:"
+  role="dialog"
+  style="pointer-events: auto;"
+  tabindex="-1"
+>
+  <div
+    class="mx-auto mt-4 h-2 w-[100px] rounded-full bg-slate-100 dark:bg-slate-800"
+  />
+  <div
+    class="grid gap-1.5 p-4 text-center sm:text-left"
+    data-testid="DrawerHeader-testid"
+  >
+    <h2
+      class="text-lg font-semibold leading-none tracking-tight"
+      id="radix-:r7:"
+    >
+      Are you absolutely sure?
+    </h2>
+    <p
+      class="text-sm text-slate-500 dark:text-slate-400"
+      id="radix-:r8:"
+    >
+      Header description
+    </p>
+  </div>
+  <div
+    data-testid="DrawerContentBody-testid"
+  >
+    Content body
+  </div>
+  <div
+    class="mt-auto flex flex-col gap-2 p-4"
+    data-testid="DrawerFooter-testid"
+  >
+    <button
+      class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-semibold ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 bg-primary text-white hover:bg-primary-hover h-10 px-4 py-2"
+    >
+      Save changes
+    </button>
+    <button
+      class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-semibold ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 border border-primary text-primary hover:bg-primary-hover hover:text-white h-10 px-4 py-2"
+      type="button"
+    >
+      Cancel
+    </button>
+  </div>
+</div>
+`;

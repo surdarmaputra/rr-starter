@@ -1,16 +1,16 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, test } from 'vitest';
 
-import { Sonner } from './Sonner';
+import { ComponentName } from './ComponentName';
 
-describe('Sonner', () => {
+describe('ComponentName', () => {
   function renderComponent() {
-    return render(<Sonner data-testid="Sonner-testid" />);
+    return render(<ComponentName data-testid="ComponentName-testid" />);
   }
 
   test('renders with data-testid', async () => {
     renderComponent();
-    await screen.findByTestId('Sonner-testid');
+    await screen.findByTestId('ComponentName-testid');
   });
 
   test('renders snapshot', async () => {
