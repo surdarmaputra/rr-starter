@@ -1,6 +1,6 @@
-import { Label } from '@radix-ui/react-label';
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { Label } from '../Label/Label';
 import { RadioGroup, RadioGroupItem, type RadioGroupProps } from './RadioGroup';
 
 type Story = StoryObj<typeof RadioGroup>;

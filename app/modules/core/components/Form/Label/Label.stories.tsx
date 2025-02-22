@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { Input } from '../Input/Input';
 import { Label, type LabelProps } from './Label';
 
 type Story = StoryObj<typeof Label>;
@@ -12,5 +13,12 @@ const meta: Meta = {
 export default meta;
 
 export const Default: Story = {
-  render: (args: LabelProps) => <Label {...args}>Sample label</Label>,
+  render: (args: LabelProps) => (
+    <>
+      <Label htmlFor="name" {...args}>
+        Sample label
+      </Label>
+      <Input name="name" />
+    </>
+  ),
 };

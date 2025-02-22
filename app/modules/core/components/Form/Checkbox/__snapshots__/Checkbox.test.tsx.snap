@@ -15,7 +15,7 @@ exports[`Checkbox > renders snapshot 1`] = `
       value="on"
     />
     <label
-      class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+      class="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
       for="terms"
     >
       Accept terms and conditions

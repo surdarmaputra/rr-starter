@@ -20,7 +20,7 @@ exports[`Switch > renders snapshot 1`] = `
       />
     </button>
     <label
-      class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+      class="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
       for="airplane-mode"
     >
       Airplane Mode

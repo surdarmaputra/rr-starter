@@ -7,7 +7,7 @@ exports[`Avatar > renders snapshot 1`] = `
     data-testid="avatar-testid"
   >
     <span
-      class="text-letter-title flex h-full w-full items-center justify-center rounded-full bg-accent font-extrabold"
+      class="flex h-full w-full items-center justify-center rounded-full bg-accent font-extrabold text-letter-title"
     >
       CN
     </span>

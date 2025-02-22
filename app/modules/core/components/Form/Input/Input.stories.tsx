@@ -23,5 +23,8 @@ const meta: Meta = {
 export default meta;
 
 export const Default: Story = {
+  args: {
+    placeholder: 'Input some text...',
+  },
   render: (args: InputProps) => <Input {...args} />,
 };
