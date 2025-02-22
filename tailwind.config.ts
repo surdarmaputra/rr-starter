@@ -40,10 +40,12 @@ export default {
         'danger-hover': 'var(--color-danger-hover)',
         divider: 'var(--color-divider)',
         accent: 'var(--color-accent)',
-        'text-title': 'var(--color-text-title)',
-        'text-body': 'var(--color-text-body)',
-        'text-caption': 'var(--color-text-caption)',
-        'text-disabled': 'var(--color-text-disabled)',
+        backdrop: 'var(--color-backdrop)',
+        'letter-title': 'var(--color-letter-title)',
+        'letter-body': 'var(--color-letter-body)',
+        'letter-caption': 'var(--color-letter-caption)',
+        'letter-disabled': 'var(--color-letter-disabled)',
+        'letter-inverted': 'var(--color-letter-inverted)',
       },
       keyframes: {
         'accordion-down': {

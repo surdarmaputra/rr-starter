@@ -16,10 +16,12 @@
     --color-danger-disabled: #fef2f2; /* Red 50 */
     --color-divider: #e2e8f0; /* Slate 200 */
     --color-accent: #f9fafb; /* Slate 50 */
-    --color-text-title: #1f2937; /* Slate 800 */
-    --color-text-body: #475569; /* Slate 600 */
-    --color-text-caption: #6b7280; /* Slate 400 */
-    --color-text-disabled: #94a3b8; /* Slate 300 */
+    --color-backdrop: #020617; /* Slate 950 */
+    --color-letter-title: #1f2937; /* Slate 800 */
+    --color-letter-body: #475569; /* Slate 600 */
+    --color-letter-caption: #6b7280; /* Slate 400 */
+    --color-letter-disabled: #94a3b8; /* Slate 300 */
+    --color-letter-inverted: #f1f5f9; /* Slate 100 */
 
     /* Hover color tokens */
     --color-primary-hover: #6366f1; /* Indigo 600 */
@@ -42,10 +44,12 @@
     --color-danger-disabled: #ef4444; /* Red 500 */
     --color-divider: #475569; /* Slate 600 */
     --color-accent: #1f2937; /* Slate 800 */
-    --color-text-title: #f1f5f9; /* Slate 100 */
-    --color-text-body: #94a3b8; /* Slate 400 */
-    --color-text-caption: #6b7280; /* Slate 300 */
-    --color-text-disabled: #6b7280; /* Slate 300 */
+    --color-backdrop: #f1f5f9; /* Slate 100 */
+    --color-letter-title: #f1f5f9; /* Slate 100 */
+    --color-letter-body: #94a3b8; /* Slate 400 */
+    --color-letter-caption: #6b7280; /* Slate 300 */
+    --color-letter-disabled: #6b7280; /* Slate 300 */
+    --color-letter-inverted: #020617; /* Slate 950 */
 
     /* Hover color tokens */
     --color-primary-hover: #6366f1; /* Indigo 600 */

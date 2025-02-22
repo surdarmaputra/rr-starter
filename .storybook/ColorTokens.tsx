@@ -1,6 +1,6 @@
 import React from 'react';
 
-const COLOR_CLASSES = {
+const COLOR_STATE_CLASSES = {
   primary: 'bg-primary',
   'primary-disabled': 'bg-primary-disabled',
   secondary: 'bg-secondary',
@@ -11,24 +11,46 @@ const COLOR_CLASSES = {
   'warning-disabled': 'bg-warning-disabled',
   danger: 'bg-danger',
   'danger-disabled': 'bg-danger-disabled',
+};
+
+const COLOR_ORNAMENT_CLASSES = {
   divider: 'bg-divider',
+  accent: 'bg-accent text-letter-body',
+  backdrop: 'bg-backdrop text-letter-inverted',
 };
 
 const TEXT_COLOR_CLASSES = {
-  'text-title': 'text-text-title border-text-title',
-  'text-body': 'text-text-body border-text-body',
-  'text-caption': 'text-text-caption border-text-caption',
-  'text-disabled': 'text-text-disabled border-text-disabled',
+  'letter-title': 'text-letter-title border-letter-title',
+  'letter-body': 'text-letter-body border-letter-body',
+  'letter-caption': 'text-letter-caption border-letter-caption',
+  'letter-disabled': 'text-letter-disabled border-letter-disabled',
+  'letter-inverted': 'text-letter-inverted bg-backdrop border-backdrop',
 };
 
 export function ColorTokens() {
   return (
     <section className="rounded p-6 dark:bg-slate-900">
-      <h2 className="mb-2 text-2xl font-extrabold text-text-title">
+      <h2 className="mb-2 text-2xl font-extrabold text-letter-title">
         Basic Colors
       </h2>
+      <h3 className="mb-2 text-lg font-semibold text-letter-title">
+        State Colors
+      </h3>
+      <div className="mb-6 grid grid-cols-6 gap-2">
+        {Object.entries(COLOR_STATE_CLASSES).map(([key, className]) => (
+          <div
+            className={`flex h-16 items-center justify-center rounded text-sm text-black ${className} `}
+            key={key}
+          >
+            {key}
+          </div>
+        ))}
+      </div>
+      <h3 className="mb-2 text-lg font-semibold text-letter-title">
+        Ornament Colors
+      </h3>
       <div className="grid grid-cols-6 gap-2">
-        {Object.entries(COLOR_CLASSES).map(([key, className]) => (
+        {Object.entries(COLOR_ORNAMENT_CLASSES).map(([key, className]) => (
           <div
             className={`flex h-16 items-center justify-center rounded text-sm text-black ${className} `}
             key={key}
@@ -38,8 +60,8 @@ export function ColorTokens() {
         ))}
       </div>
 
-      <h2 className="mb-2 mt-10 text-2xl font-extrabold text-text-title">
-        Text Colors
+      <h2 className="mb-2 mt-10 text-2xl font-extrabold text-letter-title">
+        Letter Colors
       </h2>
       <div className="grid grid-cols-6 gap-2">
         {Object.entries(TEXT_COLOR_CLASSES).map(([key, className]) => (
