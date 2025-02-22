@@ -16,5 +16,28 @@ export const Default: Story = {
     children: 'Button',
     variant: 'primary',
   },
+  argTypes: {
+    variant: {
+      control: { type: 'select' },
+      options: [
+        'primary',
+        'primary-outlined',
+        'primary-ghost',
+        'secondary',
+        'secondary-outlined',
+        'secondary-ghost',
+        'success',
+        'success-outlined',
+        'success-ghost',
+        'warning',
+        'warning-outlined',
+        'warning-ghost',
+        'danger',
+        'danger-outlined',
+        'danger-ghost',
+        'link',
+      ],
+    },
+  },
   render: (args: ButtonProps) => <Button {...args} />,
 };

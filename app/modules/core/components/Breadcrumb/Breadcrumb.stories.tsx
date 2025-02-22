@@ -1,12 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Slash } from 'lucide-react';
 import type { ComponentProps } from 'react';
 
 import {
   Breadcrumb,
+  BreadcrumbEllipsis,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
+  BreadcrumbPage,
   BreadcrumbSeparator,
 } from './Breadcrumb';
 
@@ -26,12 +27,14 @@ export const Default: Story = {
         <BreadcrumbItem>
           <BreadcrumbLink href="/">Home</BreadcrumbLink>
         </BreadcrumbItem>
-        <BreadcrumbSeparator>
-          <Slash />
-        </BreadcrumbSeparator>
+        <BreadcrumbSeparator />
+        <BreadcrumbEllipsis />
+        <BreadcrumbSeparator />
         <BreadcrumbItem>
           <BreadcrumbLink href="/components">Components</BreadcrumbLink>
         </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
       </BreadcrumbList>
     </Breadcrumb>
   ),

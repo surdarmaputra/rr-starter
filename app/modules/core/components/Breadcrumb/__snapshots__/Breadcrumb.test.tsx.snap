@@ -7,13 +7,13 @@ exports[`Breadcrumb > renders snapshot 1`] = `
     data-testid="Breadcrumb-testid"
   >
     <ol
-      class="flex flex-wrap items-center gap-1.5 break-words text-sm text-slate-500 dark:text-slate-400 sm:gap-2.5"
+      class="text-letter-caption flex flex-wrap items-center gap-1.5 break-words text-sm"
     >
       <li
         class="inline-flex items-center gap-1.5"
       >
         <a
-          class="transition-colors hover:text-slate-950 dark:hover:text-slate-50"
+          class="hover:text-letter-title transition-colors"
           href="/"
         >
           Home
@@ -45,7 +45,7 @@ exports[`Breadcrumb > renders snapshot 1`] = `
         class="inline-flex items-center gap-1.5"
       >
         <a
-          class="transition-colors hover:text-slate-950 dark:hover:text-slate-50"
+          class="hover:text-letter-title transition-colors"
           href="/components"
         >
           Components
