@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Separator > renders snapshot 1`] = `
+<div>
+  <div
+    class="shrink-0 bg-slate-200 dark:bg-slate-800 h-[1px] w-full"
+    data-orientation="horizontal"
+    data-testid="Separator-testid"
+    role="none"
+  />
+</div>
+`;
