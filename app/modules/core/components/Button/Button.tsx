@@ -26,6 +26,8 @@ const buttonVariants = cva(
           'border border-primary text-primary hover:bg-primary-hover hover:text-white',
         'secondary-outlined':
           'border border-secondary text-secondary hover:bg-secondary-hover hover:text-white',
+        'secondary-ghost':
+          'text-secondary hover:bg-secondary-hover hover:text-white',
         'success-outlined':
           'border border-success text-success hover:bg-success-hover hover:text-white',
         'warning-outlined':
