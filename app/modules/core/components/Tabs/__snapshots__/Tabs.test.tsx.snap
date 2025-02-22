@@ -1,0 +1,73 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Tabs > renders snapshot 1`] = `
+<div>
+  <div
+    data-orientation="horizontal"
+    data-testid="Tabs-testid"
+    dir="ltr"
+  >
+    <div
+      aria-orientation="horizontal"
+      class="inline-flex h-10 items-center justify-center rounded-full bg-slate-100 p-1 text-slate-500 dark:bg-slate-800 dark:text-slate-400"
+      data-orientation="horizontal"
+      role="tablist"
+      style="outline-color: none; outline-style: none; outline-width: initial;"
+      tabindex="0"
+    >
+      <button
+        aria-controls="radix-:r3:-content-account"
+        aria-selected="false"
+        class="inline-flex items-center justify-center whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium ring-offset-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-white data-[state=active]:text-slate-950 data-[state=active]:shadow-sm dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 dark:data-[state=active]:bg-slate-950 dark:data-[state=active]:text-slate-50"
+        data-orientation="horizontal"
+        data-radix-collection-item=""
+        data-state="inactive"
+        data-testid="TabsTriggerAccount-testid"
+        id="radix-:r3:-trigger-account"
+        role="tab"
+        tabindex="-1"
+        type="button"
+      >
+        Account
+      </button>
+      <button
+        aria-controls="radix-:r3:-content-password"
+        aria-selected="true"
+        class="inline-flex items-center justify-center whitespace-nowrap rounded-full px-3 py-1.5 text-sm font-medium ring-offset-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-white data-[state=active]:text-slate-950 data-[state=active]:shadow-sm dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 dark:data-[state=active]:bg-slate-950 dark:data-[state=active]:text-slate-50"
+        data-orientation="horizontal"
+        data-radix-collection-item=""
+        data-state="active"
+        data-testid="TabsTriggerPassword-testid"
+        id="radix-:r3:-trigger-password"
+        role="tab"
+        tabindex="-1"
+        type="button"
+      >
+        Password
+      </button>
+    </div>
+    <div
+      aria-labelledby="radix-:r3:-trigger-account"
+      class="mt-2 ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300"
+      data-orientation="horizontal"
+      data-state="inactive"
+      hidden=""
+      id="radix-:r3:-content-account"
+      role="tabpanel"
+      tabindex="0"
+    />
+    <div
+      aria-labelledby="radix-:r3:-trigger-password"
+      class="mt-2 ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300"
+      data-orientation="horizontal"
+      data-state="active"
+      id="radix-:r3:-content-password"
+      role="tabpanel"
+      style="animation-duration: 0s;"
+      tabindex="0"
+    >
+      Password Content
+    </div>
+  </div>
+</div>
+`;
