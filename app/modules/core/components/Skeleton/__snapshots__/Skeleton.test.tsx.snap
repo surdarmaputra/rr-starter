@@ -3,7 +3,7 @@
 exports[`Skeleton > renders snapshot 1`] = `
 <div>
   <div
-    class="animate-pulse rounded-md bg-slate-100 dark:bg-slate-800 h-4 w-12"
+    class="animate-pulse rounded-lg bg-accent duration-1000 h-4 w-12"
     data-testid="Skeleton-testid"
   />
 </div>
