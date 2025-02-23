@@ -19,9 +19,9 @@ describe('Label', () => {
   });
 
   test('renders with isOptional', async () => {
-    renderComponent({ isOptional: true });
+    renderComponent({ secondaryText: 'Optional ' });
     await screen.findByText(/Sample label/);
-    await screen.findByText(/optional/);
+    await screen.findByText(/Optional/);
   });
 
   test('renders snapshot', async () => {

@@ -11,21 +11,23 @@ const labelVariants = cva(
 export interface LabelProps
   extends React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>,
     VariantProps<typeof labelVariants> {
-  isOptional?: boolean;
+  secondaryText?: React.ReactNode;
 }
 
 const Label = React.forwardRef<
   React.ComponentRef<typeof LabelPrimitive.Root>,
   LabelProps
->(({ children, className, isOptional, ...props }, ref) => (
+>(({ children, className, secondaryText, ...props }, ref) => (
   <LabelPrimitive.Root
     className={cn(labelVariants(), className)}
     ref={ref}
     {...props}
   >
     {children}
-    {isOptional && (
-      <span className="ml-1 font-normal text-letter-caption"> (optional)</span>
+    {Boolean(secondaryText) && (
+      <span className="ml-1.5 font-normal text-letter-caption">
+        {secondaryText}
+      </span>
     )}
   </LabelPrimitive.Root>
 ));

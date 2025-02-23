@@ -13,6 +13,9 @@ const meta: Meta = {
 export default meta;
 
 export const Default: Story = {
+  args: {
+    secondaryText: 'Optional',
+  },
   render: (args: LabelProps) => (
     <>
       <Label htmlFor="name" {...args}>
