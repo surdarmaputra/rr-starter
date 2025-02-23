@@ -6,7 +6,7 @@ exports[`FormField > renders with errors, label, and hint safely 1`] = `
 >
   <label
     class="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 mb-2 block font-bold text-letter-title"
-    for="full_name"
+    for="full-name"
   >
     Name
   </label>

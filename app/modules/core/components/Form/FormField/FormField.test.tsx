@@ -6,7 +6,11 @@ import { FormField } from './FormField';
 describe('FormField', () => {
   function renderComponent(props = {}) {
     return render(
-      <FormField data-testid="FormField-testid" name="full_name" {...props} />,
+      <FormField
+        data-testid="FormField-testid"
+        inputId="full-name"
+        {...props}
+      />,
     );
   }
 
@@ -25,7 +29,7 @@ describe('FormField', () => {
     const handleChange = vi.fn();
     renderComponent({
       label: 'Name',
-      children: <input name="full_name" onChange={handleChange} />,
+      children: <input id="full-name" onChange={handleChange} />,
     });
     const input = await screen.findByLabelText(/Name/);
     fireEvent.change(input, { target: { value: 'New Value' } });

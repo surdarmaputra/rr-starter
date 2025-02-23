@@ -9,9 +9,9 @@ export interface FormFieldProps extends TestableComponentProps {
   className?: string;
   errors?: ReactNode[];
   hint?: ReactNode;
+  inputId: string;
   isOptional?: boolean;
   label?: string;
-  name: string;
 }
 
 export function FormField({
@@ -20,9 +20,9 @@ export function FormField({
   'data-testid': dataTestId,
   errors,
   hint,
+  inputId,
   isOptional,
   label,
-  name,
 }: FormFieldProps) {
   const labelSecondaryText = isOptional ? '(Optional)' : undefined;
   return (
@@ -30,7 +30,7 @@ export function FormField({
       {Boolean(label) && (
         <Label
           className="mb-2 block font-bold text-letter-title"
-          htmlFor={name}
+          htmlFor={inputId}
           secondaryText={labelSecondaryText}
         >
           {label}

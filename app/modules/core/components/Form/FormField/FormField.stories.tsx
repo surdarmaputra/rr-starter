@@ -21,6 +21,7 @@ export const Default: Story = {
   args: {
     label: 'Full name',
     isOptional: true,
+    inputId: 'full-name',
     errors: [
       'Full name is required',
       'Full name must be at least 2 characters',
@@ -30,7 +31,7 @@ export const Default: Story = {
 
   render: (args: FormFieldProps) => (
     <FormField {...args}>
-      <Input name="full_name" />
+      <Input id="full-name" name="full_name" />
     </FormField>
   ),
 };
