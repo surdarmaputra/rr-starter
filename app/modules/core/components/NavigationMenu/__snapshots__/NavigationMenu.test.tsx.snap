@@ -23,7 +23,7 @@ exports[`NavigationMenu > renders snapshot 1`] = `
           <button
             aria-controls="radix-:r4:-content-radix-:r5:"
             aria-expanded="false"
-            class="group inline-flex h-10 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-semibold transition-colors hover:bg-slate-100 hover:text-slate-900 focus:bg-slate-100 focus:text-slate-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-slate-100/50 data-[state=open]:bg-slate-100/50 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50 dark:focus:bg-slate-800 dark:focus:text-slate-50 dark:data-[active]:bg-slate-800/50 dark:data-[state=open]:bg-slate-800/50 group"
+            class="group inline-flex h-10 w-max items-center justify-center rounded-lg px-4 py-2 text-sm font-semibold text-letter-title transition-colors hover:bg-accent hover:text-letter-title focus:bg-accent focus:text-letter-title focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-primary data-[state=open]:bg-accent group"
             data-radix-collection-item=""
             data-state="closed"
             id="radix-:r4:-trigger-radix-:r5:"
@@ -54,7 +54,7 @@ exports[`NavigationMenu > renders snapshot 1`] = `
           <button
             aria-controls="radix-:r4:-content-radix-:r6:"
             aria-expanded="false"
-            class="group inline-flex h-10 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-semibold transition-colors hover:bg-slate-100 hover:text-slate-900 focus:bg-slate-100 focus:text-slate-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-slate-100/50 data-[state=open]:bg-slate-100/50 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50 dark:focus:bg-slate-800 dark:focus:text-slate-50 dark:data-[active]:bg-slate-800/50 dark:data-[state=open]:bg-slate-800/50 group"
+            class="group inline-flex h-10 w-max items-center justify-center rounded-lg px-4 py-2 text-sm font-semibold text-letter-title transition-colors hover:bg-accent hover:text-letter-title focus:bg-accent focus:text-letter-title focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-primary data-[state=open]:bg-accent group"
             data-radix-collection-item=""
             data-state="closed"
             id="radix-:r4:-trigger-radix-:r6:"
