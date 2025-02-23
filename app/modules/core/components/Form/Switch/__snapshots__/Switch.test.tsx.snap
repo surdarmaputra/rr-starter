@@ -7,7 +7,7 @@ exports[`Switch > renders snapshot 1`] = `
   >
     <button
       aria-checked="false"
-      class="peer inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-slate-900 data-[state=unchecked]:bg-slate-200 dark:focus-visible:ring-slate-300 dark:focus-visible:ring-offset-slate-950 dark:data-[state=checked]:bg-slate-50 dark:data-[state=unchecked]:bg-slate-800"
+      class="peer inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-primary-disabled dark:data-[state=unchecked]:bg-accent"
       data-state="unchecked"
       id="airplane-mode"
       role="switch"
@@ -15,12 +15,12 @@ exports[`Switch > renders snapshot 1`] = `
       value="on"
     >
       <span
-        class="pointer-events-none block h-5 w-5 rounded-full bg-white shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0 dark:bg-slate-950"
+        class="pointer-events-none block h-5 w-5 rounded-full bg-white shadow-lg dark:bg-black ring-0 transition-transform data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0"
         data-state="unchecked"
       />
     </button>
     <label
-      class="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+      class="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-letter-body"
       for="airplane-mode"
     >
       Airplane Mode

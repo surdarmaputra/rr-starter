@@ -12,5 +12,8 @@ const meta: Meta = {
 export default meta;
 
 export const Default: Story = {
+  args: {
+    placeholder: 'Input any text...',
+  },
   render: (args: TextareaProps) => <Textarea {...args} />,
 };

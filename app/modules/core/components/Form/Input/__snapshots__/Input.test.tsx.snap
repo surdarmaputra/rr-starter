@@ -3,7 +3,7 @@
 exports[`Input > renders snapshot 1`] = `
 <div>
   <input
-    class="flex h-10 w-full rounded-lg border border-divider bg-white px-3 py-2 text-base ring-offset-white file:text-letter-title file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-letter-caption focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary focus-visible:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+    class="flex h-10 w-full rounded-lg border border-divider bg-white px-3 py-2 text-base ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-letter-title placeholder:text-letter-caption focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary focus-visible:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
     data-testid="Input-testid"
   />
 </div>

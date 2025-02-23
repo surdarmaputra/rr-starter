@@ -3,7 +3,7 @@
 exports[`Label > renders snapshot 1`] = `
 <div>
   <label
-    class="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+    class="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-letter-body"
     data-testid="Label-testid"
   >
     Sample label
