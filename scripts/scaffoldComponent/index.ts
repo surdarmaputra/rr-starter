@@ -123,7 +123,6 @@ async function generateShadcnComponent({
 }) {
   const componentNameKebab = toKebabCase(componentName || '');
   runCommand(`bunx --bun shadcn@latest add ${componentNameKebab}`);
-  await fs.mkdir(targetDir, { recursive: true });
   runCommand(
     `mv ${CORE_COMPONENTS_DIR}/${componentNameKebab}.tsx ${targetDir}/${componentName}.tsx`,
   );
@@ -159,6 +158,8 @@ async function generateComponent({
       console.error(`Template "${template}" not found.`);
       process.exit(1);
     }
+
+    await fs.mkdir(targetDir, { recursive: true });
 
     if (template === 'ComponentStoryAndTestStarter') {
       await generateShadcnComponent({ componentName, targetDir });
