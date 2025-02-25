@@ -1,0 +1,3 @@
+.closeButton {
+  @apply bg-accent text-letter-body;
+}
