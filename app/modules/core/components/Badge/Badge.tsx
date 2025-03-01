@@ -1,7 +1,7 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
 
-import { cn } from '~/libs/shadcn/utils';
+import { cn } from '~/modules/core/libs/shadcn/utils';
 
 const badgeVariants = cva(
   'inline-flex items-center rounded-full border border-divider px-2.5 py-0.5 text-xs font-bold transition-colors focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2',

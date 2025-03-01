@@ -1,7 +1,7 @@
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import * as React from 'react';
 
-import { cn } from '~/libs/shadcn/utils';
+import { cn } from '~/modules/core/libs/shadcn/utils';
 
 const Avatar = React.forwardRef<
   React.ComponentRef<typeof AvatarPrimitive.Root>,

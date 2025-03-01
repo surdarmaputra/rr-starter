@@ -1,11 +1,11 @@
 import { ChevronLeft, ChevronRight, MoreHorizontal } from 'lucide-react';
 import * as React from 'react';
 
-import { cn } from '~/libs/shadcn/utils';
 import {
   type ButtonProps,
   buttonVariants,
 } from '~/modules/core/components/Button/Button';
+import { cn } from '~/modules/core/libs/shadcn/utils';
 
 export type PaginationProps = React.ComponentProps<'nav'>;
 

@@ -1,4 +1,4 @@
-import { cn } from '~/libs/shadcn/utils';
+import { cn } from '~/modules/core/libs/shadcn/utils';
 
 export type SkeletonProps = React.HTMLAttributes<HTMLDivElement>;
 

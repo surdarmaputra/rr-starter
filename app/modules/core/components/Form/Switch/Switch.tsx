@@ -1,7 +1,7 @@
 import * as SwitchPrimitives from '@radix-ui/react-switch';
 import * as React from 'react';
 
-import { cn } from '~/libs/shadcn/utils';
+import { cn } from '~/modules/core/libs/shadcn/utils';
 
 export type SwitchProps = React.ComponentPropsWithoutRef<
   typeof SwitchPrimitives.Root

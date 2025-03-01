@@ -2,7 +2,7 @@ import { X } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { toast, Toaster } from 'sonner';
 
-import { cn } from '~/libs/shadcn/utils';
+import { cn } from '~/modules/core/libs/shadcn/utils';
 
 import {
   BACKGROUND_CLASSNAME,

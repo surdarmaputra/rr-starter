@@ -1,7 +1,7 @@
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import * as React from 'react';
 
-import { cn } from '~/libs/shadcn/utils';
+import { cn } from '~/modules/core/libs/shadcn/utils';
 
 export type SeparatorProps = React.ComponentPropsWithoutRef<
   typeof SeparatorPrimitive.Root

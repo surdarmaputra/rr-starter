@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Drawer as DrawerPrimitive } from 'vaul';
 
-import { cn } from '~/libs/shadcn/utils';
+import { cn } from '~/modules/core/libs/shadcn/utils';
 
 export type DrawerProps = React.ComponentProps<typeof DrawerPrimitive.Root>;
 

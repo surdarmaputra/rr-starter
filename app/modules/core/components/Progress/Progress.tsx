@@ -1,7 +1,7 @@
 import * as ProgressPrimitive from '@radix-ui/react-progress';
 import * as React from 'react';
 
-import { cn } from '~/libs/shadcn/utils';
+import { cn } from '~/modules/core/libs/shadcn/utils';
 
 export type ProgressProps = React.ComponentPropsWithoutRef<
   typeof ProgressPrimitive.Root
