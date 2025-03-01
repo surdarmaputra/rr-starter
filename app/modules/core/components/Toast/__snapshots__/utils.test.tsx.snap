@@ -1,0 +1,251 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Toast utils > triggers 'danger' toast 1`] = `
+<div
+  class="relative flex w-full items-center gap-2 rounded-lg p-4 shadow-lg ring-1 md:w-80 bg-toast-danger-background ring-toast-danger-border shadow-danger-disabled"
+  role="alert"
+>
+  <div
+    class="h-6 w-6 shrink-0 self-start"
+  >
+    <svg
+      class="lucide lucide-circle-alert h-6 w-6 text-white fill-toast-danger-title"
+      fill="none"
+      height="24"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+      />
+      <line
+        x1="12"
+        x2="12"
+        y1="8"
+        y2="12"
+      />
+      <line
+        x1="12"
+        x2="12.01"
+        y1="16"
+        y2="16"
+      />
+    </svg>
+  </div>
+  <div
+    class="flex flex-1 items-center"
+  >
+    <div
+      class="w-full"
+    >
+      <p
+        class="pr-6 text-sm font-medium text-toast-danger-title"
+      >
+        Title
+      </p>
+      <p
+        class="mt-1 pr-6 text-sm text-toast-danger-title opacity-60"
+      >
+        Description
+      </p>
+    </div>
+  </div>
+  <button
+    class="absolute right-4 top-4 rounded-full bg-transparent p-1 text-toast-danger-title opacity-60 hover:bg-danger-disabled hover:text-toast-danger-title hover:opacity-100"
+  >
+    <span
+      class="sr-only"
+    >
+      Close
+    </span>
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-x h-4 w-4"
+      fill="none"
+      height="24"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Toast utils > triggers 'success' toast 1`] = `
+<div
+  class="relative flex w-full items-center gap-2 rounded-lg p-4 shadow-lg ring-1 md:w-80 bg-toast-success-background ring-toast-success-border shadow-success-disabled"
+  role="alert"
+>
+  <div
+    class="h-6 w-6 shrink-0 self-start"
+  >
+    <svg
+      class="lucide lucide-circle-check h-6 w-6 text-white fill-toast-success-title"
+      fill="none"
+      height="24"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+      />
+      <path
+        d="m9 12 2 2 4-4"
+      />
+    </svg>
+  </div>
+  <div
+    class="flex flex-1 items-center"
+  >
+    <div
+      class="w-full"
+    >
+      <p
+        class="pr-6 text-sm font-medium text-toast-success-title"
+      >
+        Title
+      </p>
+      <p
+        class="mt-1 pr-6 text-sm text-toast-success-title opacity-60"
+      >
+        Description
+      </p>
+    </div>
+  </div>
+  <button
+    class="absolute right-4 top-4 rounded-full bg-transparent p-1 text-toast-success-title opacity-60 hover:bg-success-disabled hover:text-toast-success-title hover:opacity-100"
+  >
+    <span
+      class="sr-only"
+    >
+      Close
+    </span>
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-x h-4 w-4"
+      fill="none"
+      height="24"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Toast utils > triggers 'warning' toast 1`] = `
+<div
+  class="relative flex w-full items-center gap-2 rounded-lg p-4 shadow-lg ring-1 md:w-80 bg-toast-warning-background ring-toast-warning-border shadow-warning-disabled"
+  role="alert"
+>
+  <div
+    class="h-6 w-6 shrink-0 self-start"
+  >
+    <svg
+      class="lucide lucide-triangle-alert h-6 w-6 text-white fill-toast-warning-title"
+      fill="none"
+      height="24"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+      />
+      <path
+        d="M12 9v4"
+      />
+      <path
+        d="M12 17h.01"
+      />
+    </svg>
+  </div>
+  <div
+    class="flex flex-1 items-center"
+  >
+    <div
+      class="w-full"
+    >
+      <p
+        class="pr-6 text-sm font-medium text-toast-warning-title"
+      >
+        Title
+      </p>
+      <p
+        class="mt-1 pr-6 text-sm text-toast-warning-title opacity-70"
+      >
+        Description
+      </p>
+    </div>
+  </div>
+  <button
+    class="absolute right-4 top-4 rounded-full bg-transparent p-1 text-toast-warning-title opacity-70 hover:bg-warning-disabled hover:text-toast-warning-title hover:opacity-100"
+  >
+    <span
+      class="sr-only"
+    >
+      Close
+    </span>
+    <svg
+      aria-hidden="true"
+      class="lucide lucide-x h-4 w-4"
+      fill="none"
+      height="24"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 6 6 18"
+      />
+      <path
+        d="m6 6 12 12"
+      />
+    </svg>
+  </button>
+</div>
+`;

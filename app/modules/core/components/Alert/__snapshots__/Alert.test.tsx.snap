@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Alert > renders snapshot 1`] = `
+<div>
+  <div
+    class="relative w-full rounded-xl p-4 [&>svg~*]:pl-8 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 bg-accent text-letter-title [&>svg]:text-letter-title"
+    role="alert"
+  />
+</div>
+`;

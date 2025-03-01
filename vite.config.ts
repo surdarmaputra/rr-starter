@@ -30,5 +30,17 @@ export default defineConfig({
   plugins: vitePlugins,
   test: {
     environment: 'happy-dom',
+    globals: true,
+    setupFiles: ['./vitest.setup.ts'],
+    coverage: {
+      exclude: [
+        '.storybook',
+        '**/*.config.{js,ts,tsx}',
+        '**/*.stories.tsx',
+        '**/*.test.{ts,tsx}',
+        '**/routes.ts',
+        '**/types.ts',
+      ],
+    },
   },
 });

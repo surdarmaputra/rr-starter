@@ -1,0 +1,11 @@
+export interface ComponentNameProps {
+  className?: string
+}
+
+export function ComponentName({ 
+  className
+}: ComponentNameProps) {
+  return (
+    <div className={className}>ComponentName</div>
+  )
+}

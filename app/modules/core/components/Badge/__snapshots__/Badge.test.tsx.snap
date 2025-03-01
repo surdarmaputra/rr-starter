@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Badge > renders snapshot 1`] = `
+<div>
+  <div
+    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-bold transition-colors focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 border-transparent bg-backdrop text-white"
+    data-testid="badge-testid"
+  >
+    Label
+  </div>
+</div>
+`;

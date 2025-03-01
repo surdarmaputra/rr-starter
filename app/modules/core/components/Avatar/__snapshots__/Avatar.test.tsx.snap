@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Avatar > renders snapshot 1`] = `
+<div>
+  <span
+    class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full"
+    data-testid="avatar-testid"
+  >
+    <span
+      class="flex h-full w-full items-center justify-center rounded-full bg-accent font-extrabold text-letter-title"
+    >
+      CN
+    </span>
+  </span>
+</div>
+`;

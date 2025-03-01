@@ -1,0 +1,35 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FormField > renders with errors, label, and hint safely 1`] = `
+<div
+  data-testid="FormField-testid"
+>
+  <label
+    class="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 mb-2 block font-bold text-letter-title"
+    for="full-name"
+  >
+    Name
+  </label>
+  <div
+    class="mt-1 text-xs text-letter-disabled"
+  >
+    This is a hint
+  </div>
+  <div
+    class="mt-1.5 text-xs text-danger"
+  >
+    <div>
+      Error 1
+    </div>
+    <div>
+      Error 2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormField > renders without errors, label, or hint safely 1`] = `
+<div
+  data-testid="FormField-testid"
+/>
+`;

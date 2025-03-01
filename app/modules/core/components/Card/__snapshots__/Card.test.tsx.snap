@@ -1,0 +1,43 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Card > renders snapshot 1`] = `
+<div>
+  <div
+    class="rounded-2xl border border-divider bg-white text-letter-body shadow-sm"
+    data-testid="Card-testid"
+  >
+    <div
+      class="flex flex-col space-y-1.5 p-6"
+    >
+      <div
+        class="text-2xl font-bold leading-none tracking-tight text-letter-title"
+        data-testid="CardTitle-testid"
+      >
+        Card Title
+      </div>
+      <div
+        class="text-sm text-letter-caption"
+        data-testid="CardDescription-testid"
+      >
+        Card Description
+      </div>
+    </div>
+    <div
+      class="p-6 pt-0"
+      data-testid="CardContent-testid"
+    >
+      <p>
+        Card Content
+      </p>
+    </div>
+    <div
+      class="flex items-center p-6 pt-0"
+      data-testid="CardFooter-testid"
+    >
+      <p>
+        Card Footer
+      </p>
+    </div>
+  </div>
+</div>
+`;
