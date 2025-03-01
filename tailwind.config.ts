@@ -46,6 +46,15 @@ export default {
         'letter-caption': 'var(--color-letter-caption)',
         'letter-disabled': 'var(--color-letter-disabled)',
         'letter-inverted': 'var(--color-letter-inverted)',
+        'toast-success-title': 'var(--color-toast-success-title)',
+        'toast-success-background': 'var(--color-toast-success-background)',
+        'toast-success-border': 'var(--color-toast-success-border)',
+        'toast-warning-title': 'var(--color-toast-warning-title)',
+        'toast-warning-background': 'var(--color-toast-warning-background)',
+        'toast-warning-border': 'var(--color-toast-warning-border)',
+        'toast-danger-title': 'var(--color-toast-danger-title)',
+        'toast-danger-background': 'var(--color-toast-danger-background)',
+        'toast-danger-border': 'var(--color-toast-danger-border)',
       },
       keyframes: {
         'accordion-down': {

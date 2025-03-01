@@ -29,6 +29,17 @@
     --color-success-hover: #16a34a; /* Green 600 */
     --color-warning-hover: #f59e0b; /* Yellow 600 */
     --color-danger-hover: #dc2626; /* Red 600 */
+
+    /* Toast color tokens */
+    --color-toast-success-title: #15803d; /* Green 700 */
+    --color-toast-success-background: #f0fdf4; /* Green 50 */
+    --color-toast-success-border: #bbf7d0; /* Green 200 */
+    --color-toast-warning-title: #f59e0b; /* Yellow 600 */
+    --color-toast-warning-background: #fefce8; /* Yellow 50 */
+    --color-toast-warning-border: #fef08a; /* Yellow 200 */
+    --color-toast-danger-title: #dc2626; /* Red 600 */
+    --color-toast-danger-background: #fdf2f8; /* Pink 50 */
+    --color-toast-danger-border: #ffe4e6; /* Rose 100 */
   }
 
   .dark {
@@ -57,5 +68,16 @@
     --color-success-hover: #22c55e; /* Green 500 */
     --color-warning-hover: #fbbf24; /* Yellow 500 */
     --color-danger-hover: #ef4444; /* Red 600 */
+
+    /* Toast color tokens */
+    --color-toast-success-title: #15803d; /* Green 700 */
+    --color-toast-success-background: #f0fdf4; /* Green 50 */
+    --color-toast-success-border: #bbf7d0; /* Green 200 */
+    --color-toast-warning-title: #f59e0b; /* Yellow 600 */
+    --color-toast-warning-background: #fefce8; /* Yellow 50 */
+    --color-toast-warning-border: #fef08a; /* Yellow 200 */
+    --color-toast-danger-title: #dc2626; /* Red 600 */
+    --color-toast-danger-background: #fdf2f8; /* Pink 50 */
+    --color-toast-danger-border: #ffe4e6; /* Rose 100 */
   }
 }
