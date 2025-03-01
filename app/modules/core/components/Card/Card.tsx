@@ -1,13 +1,13 @@
 import * as React from 'react';
 
-import { cn } from '~/modules/core/libs/shadcn/utils';
+import { mergeClassNames } from '~/modules/core/libs/utils/ui';
 
 const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
   <div
-    className={cn(
+    className={mergeClassNames(
       'rounded-2xl border border-divider bg-white text-letter-body shadow-sm',
       className,
     )}
@@ -22,7 +22,7 @@ const CardHeader = React.forwardRef<
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
   <div
-    className={cn('flex flex-col space-y-1.5 p-6', className)}
+    className={mergeClassNames('flex flex-col space-y-1.5 p-6', className)}
     ref={ref}
     {...props}
   />
@@ -34,7 +34,7 @@ const CardTitle = React.forwardRef<
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
   <div
-    className={cn(
+    className={mergeClassNames(
       'text-2xl font-bold leading-none tracking-tight text-letter-title',
       className,
     )}
@@ -49,7 +49,7 @@ const CardDescription = React.forwardRef<
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
   <div
-    className={cn('text-sm text-letter-caption', className)}
+    className={mergeClassNames('text-sm text-letter-caption', className)}
     ref={ref}
     {...props}
   />
@@ -60,7 +60,11 @@ const CardContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div className={cn('p-6 pt-0', className)} ref={ref} {...props} />
+  <div
+    className={mergeClassNames('p-6 pt-0', className)}
+    ref={ref}
+    {...props}
+  />
 ));
 CardContent.displayName = 'CardContent';
 
@@ -69,7 +73,7 @@ const CardFooter = React.forwardRef<
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
   <div
-    className={cn('flex items-center p-6 pt-0', className)}
+    className={mergeClassNames('flex items-center p-6 pt-0', className)}
     ref={ref}
     {...props}
   />

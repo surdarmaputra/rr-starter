@@ -1,7 +1,7 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
 
-import { cn } from '~/modules/core/libs/shadcn/utils';
+import { mergeClassNames } from '~/modules/core/libs/utils/ui';
 
 const badgeVariants = cva(
   'inline-flex items-center rounded-full border border-divider px-2.5 py-0.5 text-xs font-bold transition-colors focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2',
@@ -34,7 +34,10 @@ export interface BadgeProps
 
 function Badge({ className, variant, ...props }: BadgeProps) {
   return (
-    <div className={cn(badgeVariants({ variant }), className)} {...props} />
+    <div
+      className={mergeClassNames(badgeVariants({ variant }), className)}
+      {...props}
+    />
   );
 }
 

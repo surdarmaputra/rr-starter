@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { cn } from '~/modules/core/libs/shadcn/utils';
+import { mergeClassNames } from '~/modules/core/libs/utils/ui';
 
 import {
   NavigationMenu,
@@ -50,7 +50,7 @@ export const Default: Story = {
               <li>
                 <NavigationMenuLink asChild>
                   <a
-                    className={cn(
+                    className={mergeClassNames(
                       'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-letter-body focus:bg-accent focus:text-letter-body dark:hover:bg-black',
                     )}
                     href="/docs"
@@ -68,7 +68,7 @@ export const Default: Story = {
               <li>
                 <NavigationMenuLink asChild>
                   <a
-                    className={cn(
+                    className={mergeClassNames(
                       'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-letter-body focus:bg-accent focus:text-letter-body dark:hover:bg-black',
                     )}
                     href="/docs/installation"
@@ -85,7 +85,7 @@ export const Default: Story = {
               <li>
                 <NavigationMenuLink asChild>
                   <a
-                    className={cn(
+                    className={mergeClassNames(
                       'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-letter-body focus:bg-accent focus:text-letter-body dark:hover:bg-black',
                     )}
                     href="/docs/primitives/typography"
@@ -109,7 +109,7 @@ export const Default: Story = {
               <li>
                 <NavigationMenuLink asChild>
                   <a
-                    className={cn(
+                    className={mergeClassNames(
                       'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-letter-body focus:bg-accent focus:text-letter-body dark:hover:bg-black',
                     )}
                     href="/docs/primitives/alert-dialog"
@@ -127,7 +127,7 @@ export const Default: Story = {
               <li>
                 <NavigationMenuLink asChild>
                   <a
-                    className={cn(
+                    className={mergeClassNames(
                       'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-letter-body focus:bg-accent focus:text-letter-body dark:hover:bg-black',
                     )}
                     href="/docs/primitives/hover-card"
@@ -145,7 +145,7 @@ export const Default: Story = {
               <li>
                 <NavigationMenuLink asChild>
                   <a
-                    className={cn(
+                    className={mergeClassNames(
                       'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-letter-body focus:bg-accent focus:text-letter-body dark:hover:bg-black',
                     )}
                     href="/docs/primitives/progress"
@@ -163,7 +163,7 @@ export const Default: Story = {
               <li>
                 <NavigationMenuLink asChild>
                   <a
-                    className={cn(
+                    className={mergeClassNames(
                       'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-letter-body focus:bg-accent focus:text-letter-body dark:hover:bg-black',
                     )}
                     href="/docs/primitives/scroll-area"
@@ -180,7 +180,7 @@ export const Default: Story = {
               <li>
                 <NavigationMenuLink asChild>
                   <a
-                    className={cn(
+                    className={mergeClassNames(
                       'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-letter-body focus:bg-accent focus:text-letter-body dark:hover:bg-black',
                     )}
                     href="/docs/primitives/tabs"
@@ -198,7 +198,7 @@ export const Default: Story = {
               <li>
                 <NavigationMenuLink asChild>
                   <a
-                    className={cn(
+                    className={mergeClassNames(
                       'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-letter-body focus:bg-accent focus:text-letter-body dark:hover:bg-black',
                     )}
                     href="/docs/primitives/tooltip"

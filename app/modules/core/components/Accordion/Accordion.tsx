@@ -6,8 +6,7 @@ import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { ChevronDown } from 'lucide-react';
 import * as React from 'react';
 
-import { cn } from '~/modules/core/libs/shadcn/utils';
-
+import { mergeClassNames } from '../../libs/utils/ui';
 import type { TestableComponentProps } from '../../types';
 
 export type AccordionProps = (AccordionSingleProps | AccordionMultipleProps) &
@@ -19,7 +18,7 @@ const Accordion = React.forwardRef<
   AccordionProps
 >(({ className, ...props }, ref) => (
   <AccordionPrimitive.Root
-    className={cn('flex w-full flex-col gap-2', className)}
+    className={mergeClassNames('flex w-full flex-col gap-2', className)}
     ref={ref}
     {...props}
   />
@@ -31,7 +30,7 @@ const AccordionItem = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
 >(({ className, ...props }, ref) => (
   <AccordionPrimitive.Item
-    className={cn(
+    className={mergeClassNames(
       'rounded-lg border border-secondary px-4 transition-colors data-[state=open]:bg-accent',
       className,
     )}
@@ -47,7 +46,7 @@ const AccordionTrigger = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Header className="flex">
     <AccordionPrimitive.Trigger
-      className={cn(
+      className={mergeClassNames(
         'flex flex-1 items-center justify-between py-4 font-semibold text-letter-body transition-all data-[state=open]:font-extrabold [&[data-state=open]>svg]:rotate-180',
         className,
       )}
@@ -70,7 +69,7 @@ const AccordionContent = React.forwardRef<
     ref={ref}
     {...props}
   >
-    <div className={cn('pb-4 pt-0', className)}>{children}</div>
+    <div className={mergeClassNames('pb-4 pt-0', className)}>{children}</div>
   </AccordionPrimitive.Content>
 ));
 

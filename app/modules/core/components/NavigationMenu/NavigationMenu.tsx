@@ -3,7 +3,7 @@ import { cva } from 'class-variance-authority';
 import { ChevronDown } from 'lucide-react';
 import * as React from 'react';
 
-import { cn } from '~/modules/core/libs/shadcn/utils';
+import { mergeClassNames } from '~/modules/core/libs/utils/ui';
 
 export type NavigationMenuProps = React.ComponentPropsWithoutRef<
   typeof NavigationMenuPrimitive.Root
@@ -14,7 +14,7 @@ const NavigationMenu = React.forwardRef<
   NavigationMenuProps
 >(({ className, children, ...props }, ref) => (
   <NavigationMenuPrimitive.Root
-    className={cn(
+    className={mergeClassNames(
       'relative z-10 flex max-w-max flex-1 items-center justify-center',
       className,
     )}
@@ -32,7 +32,7 @@ const NavigationMenuList = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.List>
 >(({ className, ...props }, ref) => (
   <NavigationMenuPrimitive.List
-    className={cn(
+    className={mergeClassNames(
       'group flex flex-1 list-none items-center justify-center space-x-1',
       className,
     )}
@@ -55,7 +55,11 @@ const NavigationMenuTrigger = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Trigger>
 >(({ className, children, ...props }, ref) => (
   <NavigationMenuPrimitive.Trigger
-    className={cn(navigationMenuTriggerStyle(), 'group', className)}
+    className={mergeClassNames(
+      navigationMenuTriggerStyle(),
+      'group',
+      className,
+    )}
     ref={ref}
     {...props}
   >
@@ -74,7 +78,7 @@ const NavigationMenuContent = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Content>
 >(({ className, ...props }, ref) => (
   <NavigationMenuPrimitive.Content
-    className={cn(
+    className={mergeClassNames(
       'left-0 top-0 w-full',
       'data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out',
       'data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out',
@@ -95,9 +99,11 @@ const NavigationMenuViewport = React.forwardRef<
   React.ComponentRef<typeof NavigationMenuPrimitive.Viewport>,
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Viewport>
 >(({ className, ...props }, ref) => (
-  <div className={cn('absolute left-0 top-full flex justify-center')}>
+  <div
+    className={mergeClassNames('absolute left-0 top-full flex justify-center')}
+  >
     <NavigationMenuPrimitive.Viewport
-      className={cn(
+      className={mergeClassNames(
         'origin-top-center relative mt-1.5',
         'h-[var(--radix-navigation-menu-viewport-height)] w-full',
         'overflow-hidden rounded-lg',
@@ -120,7 +126,7 @@ const NavigationMenuIndicator = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Indicator>
 >(({ className, ...props }, ref) => (
   <NavigationMenuPrimitive.Indicator
-    className={cn(
+    className={mergeClassNames(
       'top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden',
       'data-[state=visible]:animate-in data-[state=visible]:fade-in',
       'data-[state=hidden]:animate-out data-[state=hidden]:fade-out',

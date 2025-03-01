@@ -1,7 +1,7 @@
 import * as PopoverPrimitive from '@radix-ui/react-popover';
 import * as React from 'react';
 
-import { cn } from '~/modules/core/libs/shadcn/utils';
+import { mergeClassNames } from '~/modules/core/libs/utils/ui';
 
 export type PopoverProps = React.ComponentPropsWithoutRef<
   typeof PopoverPrimitive.Root
@@ -26,7 +26,7 @@ const PopoverContent = React.forwardRef<
     <PopoverPrimitive.Portal>
       <PopoverPrimitive.Content
         align={align}
-        className={cn(
+        className={mergeClassNames(
           'z-50 w-72 rounded-lg bg-white p-4 text-letter-body shadow-md outline-none dark:bg-accent',
           'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0',
           'data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95',

@@ -1,7 +1,7 @@
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 import * as React from 'react';
 
-import { cn } from '~/modules/core/libs/shadcn/utils';
+import { mergeClassNames } from '~/modules/core/libs/utils/ui';
 
 export type TooltipProviderProps = React.ComponentPropsWithoutRef<
   typeof TooltipPrimitive.Provider
@@ -22,7 +22,7 @@ const TooltipContent = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
 >(({ className, sideOffset = 5, children, ...props }, ref) => (
   <TooltipPrimitive.Content
-    className={cn(
+    className={mergeClassNames(
       'z-50 overflow-hidden rounded-full border bg-backdrop px-3 py-1.5 text-sm text-letter-inverted shadow-md',
       'animate-in fade-in-0 zoom-in-95',
       'data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95',

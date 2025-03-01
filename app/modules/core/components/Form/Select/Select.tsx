@@ -2,7 +2,7 @@ import * as SelectPrimitive from '@radix-ui/react-select';
 import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 import * as React from 'react';
 
-import { cn } from '~/modules/core/libs/shadcn/utils';
+import { mergeClassNames } from '~/modules/core/libs/utils/ui';
 
 export type SelectProps = React.ComponentPropsWithoutRef<
   typeof SelectPrimitive.Root
@@ -19,7 +19,7 @@ const SelectTrigger = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
 >(({ className, children, ...props }, ref) => (
   <SelectPrimitive.Trigger
-    className={cn(
+    className={mergeClassNames(
       'flex h-10 w-full items-center justify-between rounded-lg',
       'border border-divider bg-white px-3 py-2 text-sm',
       'ring-offset-white focus:outline-none focus:ring-1 focus:ring-primary',
@@ -43,7 +43,7 @@ const SelectScrollUpButton = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.ScrollUpButton>
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.ScrollUpButton
-    className={cn(
+    className={mergeClassNames(
       'flex cursor-default items-center justify-center py-1',
       className,
     )}
@@ -60,7 +60,7 @@ const SelectScrollDownButton = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.ScrollDownButton>
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.ScrollDownButton
-    className={cn(
+    className={mergeClassNames(
       'flex cursor-default items-center justify-center py-1',
       className,
     )}
@@ -79,7 +79,7 @@ const SelectContent = React.forwardRef<
 >(({ className, children, position = 'popper', ...props }, ref) => (
   <SelectPrimitive.Portal>
     <SelectPrimitive.Content
-      className={cn(
+      className={mergeClassNames(
         'relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-lg',
         'border border-divider bg-white shadow-md',
         'data-[state=open]:animate-in data-[state=closed]:animate-out',
@@ -97,7 +97,7 @@ const SelectContent = React.forwardRef<
     >
       <SelectScrollUpButton />
       <SelectPrimitive.Viewport
-        className={cn(
+        className={mergeClassNames(
           'p-1',
           position === 'popper' &&
             'h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]',
@@ -116,7 +116,10 @@ const SelectLabel = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Label>
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.Label
-    className={cn('py-1.5 pl-8 pr-2 text-sm font-semibold', className)}
+    className={mergeClassNames(
+      'py-1.5 pl-8 pr-2 text-sm font-semibold',
+      className,
+    )}
     ref={ref}
     {...props}
   />
@@ -128,7 +131,7 @@ const SelectItem = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item>
 >(({ className, children, ...props }, ref) => (
   <SelectPrimitive.Item
-    className={cn(
+    className={mergeClassNames(
       'relative flex w-full cursor-default select-none items-center',
       'rounded-lg py-1.5 pl-8 pr-2 text-sm outline-none',
       'focus:bg-accent focus:text-letter-title',
@@ -154,7 +157,7 @@ const SelectSeparator = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Separator>
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.Separator
-    className={cn('-mx-1 my-1 h-px bg-divider', className)}
+    className={mergeClassNames('-mx-1 my-1 h-px bg-divider', className)}
     ref={ref}
     {...props}
   />

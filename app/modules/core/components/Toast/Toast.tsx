@@ -2,8 +2,7 @@ import { X } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { toast, Toaster } from 'sonner';
 
-import { cn } from '~/modules/core/libs/shadcn/utils';
-
+import { mergeClassNames } from '../../libs/utils/ui';
 import {
   BACKGROUND_CLASSNAME,
   CLOSE_BUTTON_CLASSNAME,
@@ -42,7 +41,7 @@ function Toast({
 
   return (
     <div
-      className={cn(
+      className={mergeClassNames(
         'relative flex w-full items-center gap-2 rounded-lg p-4 shadow-lg ring-1 md:w-80',
         BACKGROUND_CLASSNAME[variant],
       )}
@@ -50,14 +49,17 @@ function Toast({
     >
       <div className="h-6 w-6 shrink-0 self-start">
         <IconComponent
-          className={cn('h-6 w-6 text-white', ICON_CLASSNAME[variant])}
+          className={mergeClassNames(
+            'h-6 w-6 text-white',
+            ICON_CLASSNAME[variant],
+          )}
         />
       </div>
 
       <div className="flex flex-1 items-center">
         <div className="w-full">
           <p
-            className={cn(
+            className={mergeClassNames(
               'pr-6 text-sm font-medium text-letter-body',
               TITLE_CLASSNAME[variant],
             )}
@@ -66,7 +68,7 @@ function Toast({
           </p>
           {Boolean(description) && (
             <p
-              className={cn(
+              className={mergeClassNames(
                 'mt-1 pr-6 text-sm text-letter-caption',
                 DESCRIPTION_CLASSNAME[variant],
               )}
@@ -79,7 +81,7 @@ function Toast({
 
       {isClosable && !action && (
         <button
-          className={cn(
+          className={mergeClassNames(
             'absolute right-4 top-4 rounded-full bg-transparent p-1 text-letter-disabled hover:bg-accent hover:text-letter-caption',
             CLOSE_BUTTON_CLASSNAME[variant],
           )}

@@ -1,7 +1,7 @@
 import * as ProgressPrimitive from '@radix-ui/react-progress';
 import * as React from 'react';
 
-import { cn } from '~/modules/core/libs/shadcn/utils';
+import { mergeClassNames } from '~/modules/core/libs/utils/ui';
 
 export type ProgressProps = React.ComponentPropsWithoutRef<
   typeof ProgressPrimitive.Root
@@ -12,7 +12,7 @@ const Progress = React.forwardRef<
   ProgressProps
 >(({ className, value, ...props }, ref) => (
   <ProgressPrimitive.Root
-    className={cn(
+    className={mergeClassNames(
       'relative h-4 w-full overflow-hidden rounded-full bg-primary-disabled',
       className,
     )}

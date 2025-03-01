@@ -2,8 +2,7 @@ import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
 
-import { cn } from '~/modules/core/libs/shadcn/utils';
-
+import { mergeClassNames } from '../../libs/utils/ui';
 import type { TestableComponentProps } from '../../types';
 
 const buttonVariants = cva(
@@ -66,7 +65,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot : 'button';
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={mergeClassNames(
+          buttonVariants({ variant, size, className }),
+        )}
         ref={ref}
         {...props}
       />

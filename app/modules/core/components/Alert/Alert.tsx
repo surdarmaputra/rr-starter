@@ -1,7 +1,7 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
 
-import { cn } from '~/modules/core/libs/shadcn/utils';
+import { mergeClassNames } from '~/modules/core/libs/utils/ui';
 
 import type { TestableComponentProps } from '../../types';
 
@@ -31,7 +31,7 @@ export interface AlertProps
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
   ({ className, variant, ...props }, ref) => (
     <div
-      className={cn(alertVariants({ variant }), className)}
+      className={mergeClassNames(alertVariants({ variant }), className)}
       ref={ref}
       role="alert"
       {...props}
@@ -45,7 +45,10 @@ const AlertTitle = React.forwardRef<
   React.HTMLAttributes<HTMLHeadingElement>
 >(({ className, ...props }, ref) => (
   <h5
-    className={cn('mb-1.5 font-bold leading-none tracking-tight', className)}
+    className={mergeClassNames(
+      'mb-1.5 font-bold leading-none tracking-tight',
+      className,
+    )}
     ref={ref}
     {...props}
   />
@@ -57,7 +60,7 @@ const AlertDescription = React.forwardRef<
   React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
   <div
-    className={cn('text-sm [&_p]:leading-relaxed', className)}
+    className={mergeClassNames('text-sm [&_p]:leading-relaxed', className)}
     ref={ref}
     {...props}
   />

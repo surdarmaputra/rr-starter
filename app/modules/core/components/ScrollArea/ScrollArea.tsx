@@ -1,7 +1,7 @@
 import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area';
 import * as React from 'react';
 
-import { cn } from '~/modules/core/libs/shadcn/utils';
+import { mergeClassNames } from '~/modules/core/libs/utils/ui';
 
 export type ScrollAreaProps = React.ComponentPropsWithoutRef<
   typeof ScrollAreaPrimitive.Root
@@ -12,7 +12,7 @@ const ScrollArea = React.forwardRef<
   ScrollAreaProps
 >(({ className, children, ...props }, ref) => (
   <ScrollAreaPrimitive.Root
-    className={cn('relative overflow-hidden', className)}
+    className={mergeClassNames('relative overflow-hidden', className)}
     ref={ref}
     {...props}
   >
@@ -30,7 +30,7 @@ const ScrollBar = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>
 >(({ className, orientation = 'vertical', ...props }, ref) => (
   <ScrollAreaPrimitive.ScrollAreaScrollbar
-    className={cn(
+    className={mergeClassNames(
       'flex touch-none select-none transition-colors',
       orientation === 'vertical' &&
         'h-full w-2.5 border-l border-l-transparent p-[1px]',

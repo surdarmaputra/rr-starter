@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Drawer as DrawerPrimitive } from 'vaul';
 
-import { cn } from '~/modules/core/libs/shadcn/utils';
+import { mergeClassNames } from '~/modules/core/libs/utils/ui';
 
 export type DrawerProps = React.ComponentProps<typeof DrawerPrimitive.Root>;
 
@@ -24,7 +24,7 @@ const DrawerOverlay = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay>
 >(({ className, ...props }, ref) => (
   <DrawerPrimitive.Overlay
-    className={cn('fixed inset-0 z-50 bg-black/80', className)}
+    className={mergeClassNames('fixed inset-0 z-50 bg-black/80', className)}
     ref={ref}
     {...props}
   />
@@ -38,7 +38,7 @@ const DrawerContent = React.forwardRef<
   <DrawerPortal>
     <DrawerOverlay />
     <DrawerPrimitive.Content
-      className={cn(
+      className={mergeClassNames(
         'fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950',
         className,
       )}
@@ -57,7 +57,10 @@ const DrawerHeader = ({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
-    className={cn('grid gap-1.5 p-4 text-center sm:text-left', className)}
+    className={mergeClassNames(
+      'grid gap-1.5 p-4 text-center sm:text-left',
+      className,
+    )}
     {...props}
   />
 );
@@ -68,7 +71,7 @@ const DrawerFooter = ({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
-    className={cn('mt-auto flex flex-col gap-2 p-4', className)}
+    className={mergeClassNames('mt-auto flex flex-col gap-2 p-4', className)}
     {...props}
   />
 );
@@ -79,7 +82,7 @@ const DrawerTitle = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title>
 >(({ className, ...props }, ref) => (
   <DrawerPrimitive.Title
-    className={cn(
+    className={mergeClassNames(
       'text-lg font-semibold leading-none tracking-tight',
       className,
     )}
@@ -94,7 +97,10 @@ const DrawerDescription = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Description>
 >(({ className, ...props }, ref) => (
   <DrawerPrimitive.Description
-    className={cn('text-sm text-slate-500 dark:text-slate-400', className)}
+    className={mergeClassNames(
+      'text-sm text-slate-500 dark:text-slate-400',
+      className,
+    )}
     ref={ref}
     {...props}
   />

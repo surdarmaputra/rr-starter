@@ -2,7 +2,7 @@ import { Slot } from '@radix-ui/react-slot';
 import { ChevronRight, MoreHorizontal } from 'lucide-react';
 import * as React from 'react';
 
-import { cn } from '~/modules/core/libs/shadcn/utils';
+import { mergeClassNames } from '~/modules/core/libs/utils/ui';
 
 const Breadcrumb = React.forwardRef<
   HTMLElement,
@@ -17,7 +17,7 @@ const BreadcrumbList = React.forwardRef<
   React.ComponentPropsWithoutRef<'ol'>
 >(({ className, ...props }, ref) => (
   <ol
-    className={cn(
+    className={mergeClassNames(
       'flex flex-wrap items-center gap-1.5 break-words text-sm text-letter-caption',
       className,
     )}
@@ -32,7 +32,7 @@ const BreadcrumbItem = React.forwardRef<
   React.ComponentPropsWithoutRef<'li'>
 >(({ className, ...props }, ref) => (
   <li
-    className={cn('inline-flex items-center gap-1.5', className)}
+    className={mergeClassNames('inline-flex items-center gap-1.5', className)}
     ref={ref}
     {...props}
   />
@@ -49,7 +49,10 @@ const BreadcrumbLink = React.forwardRef<
 
   return (
     <Comp
-      className={cn('transition-colors hover:text-letter-title', className)}
+      className={mergeClassNames(
+        'transition-colors hover:text-letter-title',
+        className,
+      )}
       ref={ref}
       {...props}
     />
@@ -64,7 +67,7 @@ const BreadcrumbPage = React.forwardRef<
   <span
     aria-current="page"
     aria-disabled="true"
-    className={cn('font-normal text-letter-title', className)}
+    className={mergeClassNames('font-normal text-letter-title', className)}
     ref={ref}
     role="link"
     {...props}
@@ -79,7 +82,7 @@ const BreadcrumbSeparator = ({
 }: React.ComponentProps<'li'>) => (
   <li
     aria-hidden="true"
-    className={cn('[&>svg]:h-3.5 [&>svg]:w-3.5', className)}
+    className={mergeClassNames('[&>svg]:h-3.5 [&>svg]:w-3.5', className)}
     role="presentation"
     {...props}
   >
@@ -94,7 +97,10 @@ const BreadcrumbEllipsis = ({
 }: React.ComponentProps<'span'>) => (
   <span
     aria-hidden="true"
-    className={cn('flex h-9 w-9 items-center justify-center', className)}
+    className={mergeClassNames(
+      'flex h-9 w-9 items-center justify-center',
+      className,
+    )}
     role="presentation"
     {...props}
   >
