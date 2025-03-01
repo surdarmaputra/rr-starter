@@ -102,6 +102,7 @@ async function adjustShadcnGeneratedComponent(filePath: string): Promise<void> {
     const updatedContent = content
       .replaceAll('~/lib/utils', '~/modules/core/libs/utils/ui')
       .replaceAll('cn(', 'mergeClassNames(')
+      .replaceAll('import { cn }', 'import { mergeClassNames }')
       .replaceAll('React.ElementRef', 'React.ComponentRef');
     await fs.writeFile(filePath, updatedContent);
   } catch (error) {
