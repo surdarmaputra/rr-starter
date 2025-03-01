@@ -40,3 +40,18 @@ jobs:
         with:
           title: 'CI: Validate PR -> Lint'
           webhookUrl: ${{ env.DISCORD_WEBHOOK_URL }}
+
+  test:
+    name: Test
+    needs: install-dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/cache-dependencies
+      - name: Test
+        run: bun run test:coverage
+      - name: Notify job status
+        uses: './.github/actions/notify-job-status'
+        with:
+          title: 'CI: Validate PR -> Test'
+          webhookUrl: ${{ env.DISCORD_WEBHOOK_URL }}

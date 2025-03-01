@@ -25,19 +25,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/cache-dependencies
-      - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v45
-        with:
-          safe_output: false
       - name: Lint
-        id: lint
-        if: steps.changed-files.outputs.all_changed_files
-        env:
-          FILES: ${{ steps.changed-files.outputs.all_changed_files }}
-        run: |
-          FILTERED_FILES="$(echo $FILES | tr " " "\n" | grep -E "(.*)\.(ts|tsx)$" || true)"
-          bun run lint $FILTERED_FILES
+        run: bun run lint .
       - name: Notify job status
         uses: './.github/actions/notify-job-status'
         with:
