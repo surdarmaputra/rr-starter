@@ -13,7 +13,8 @@
     "scaffold:component": "bun scripts/scaffoldComponent/index.ts",
     "start": "cross-env NODE_ENV=production react-router-serve ./build/server/index.js",
     "start:storybook": "storybook dev -p 6006",
-    "test": "vitest",
+    "test": "vitest --logHeapUsage",
+    "test:coverage": "bun run test --run --coverage",
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
@@ -67,6 +68,7 @@
     "@types/node": "^20",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
+    "@vitest/coverage-v8": "2.1.8",
     "autoprefixer": "^10.4.20",
     "commander": "^13.1.0",
     "cross-env": "^7.0.3",
