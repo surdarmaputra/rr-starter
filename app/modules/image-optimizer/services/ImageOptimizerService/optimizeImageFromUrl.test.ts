@@ -86,7 +86,7 @@ describe('optimizeImageFromUrl', () => {
       optimizeImageFromUrl({
         imageUrl: imageSampleUrl,
       }),
-    ).rejects.toThrow('Failed to fetch image: 404 Not Found');
+    ).rejects.toThrow('FAILED_TO_FETCH_IMAGE - 404 Not Found');
   });
 
   test('throws an error from fetch function', async () => {

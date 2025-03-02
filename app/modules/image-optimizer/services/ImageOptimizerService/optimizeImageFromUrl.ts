@@ -1,6 +1,8 @@
 import sharp from 'sharp';
 import { fetch } from 'undici';
 
+import { ERROR_LOG_MESSAGE } from '../../constants';
+
 export interface OptimizeImageFromUrlOptions {
   imageUrl: string;
   width?: number;
@@ -19,25 +21,21 @@ export async function optimizeImageFromUrl({
   format = 'webp',
 }: OptimizeImageFromUrlOptions): Promise<Buffer> {
   if (!imageUrl) {
-    throw new Error('Missing imageUrl');
+    throw new Error(ERROR_LOG_MESSAGE.MISSING_IMAGE_URL);
   }
 
-  try {
-    const response = await fetch(imageUrl);
-    if (!response.ok) {
-      throw new Error(`Failed to fetch image: ${response.statusText}`);
-    }
-
-    const buffer = Buffer.from(await response.arrayBuffer());
-    const optimizedImage = await sharp(buffer)
-      .resize({ width })
-      .toFormat(format)
-      .toBuffer();
-
-    return optimizedImage;
-  } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error('Error in getOptimizedImage:', (error as Error).message);
-    throw error;
+  const response = await fetch(imageUrl);
+  if (!response.ok) {
+    throw new Error(
+      `${ERROR_LOG_MESSAGE.FAILED_TO_FETCH_IMAGE} - ${response.statusText}`,
+    );
   }
+
+  const buffer = Buffer.from(await response.arrayBuffer());
+  const optimizedImage = await sharp(buffer)
+    .resize({ width })
+    .toFormat(format)
+    .toBuffer();
+
+  return optimizedImage;
 }

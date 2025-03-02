@@ -1,3 +1,6 @@
+import { logger } from '~/modules/core/libs/logger/logger';
+
+import { ERROR_LOG_MESSAGE, INFO_LOG_MESSAGE } from '../../constants';
 import { optimizeImageFromUrl } from '../../services/ImageOptimizerService/optimizeImageFromUrl';
 
 export async function getOptimizedImage(request: Request): Promise<Response> {
@@ -21,15 +24,15 @@ export async function getOptimizedImage(request: Request): Promise<Response> {
       format,
     });
 
+    logger.logInfo(INFO_LOG_MESSAGE.OPTIMIZE_IMAGE_SUCCESS);
     return new Response(optimizedImage, {
       headers: {
         'Content-Type': `image/${format}`,
         'Cache-Control': 'public, max-age=604800', // Cache for 7 days
       },
     });
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars, unused-imports/no-unused-vars
   } catch (error) {
-    // TODO: add logger
-    return new Response('Error processing image', { status: 500 });
+    logger.logError(ERROR_LOG_MESSAGE.GET_OPTIMIZED_IMAGE_ERROR, error);
+    return new Response('Image not found', { status: 404 });
   }
 }

@@ -12,12 +12,12 @@ describe('getOptimizedImage', () => {
     expect(response.status).toBe(400);
   });
 
-  test('returns 500 if an error occurs while optimizing an unavailable image', async () => {
+  test('returns 404 if an error occurs while optimizing an unavailable image', async () => {
     const request = new Request(
       'http://localhost:3000/api/optimize-image?url=https://example.com/unavailable.jpg',
     );
     const response = await getOptimizedImage(request);
-    expect(response.status).toBe(500);
+    expect(response.status).toBe(404);
   });
 
   test('returns the optimized image with the correct content type and cache control headers', async () => {
