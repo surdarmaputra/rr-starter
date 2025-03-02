@@ -4,7 +4,7 @@ import * as React from 'react';
 import { mergeClassNames } from '~/modules/core/libs/utils/ui';
 
 const badgeVariants = cva(
-  'inline-flex items-center rounded-full border border-divider px-2.5 py-0.5 text-xs font-bold transition-colors focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2',
+  'inline-flex items-center rounded-full border border-divider px-4 py-0.5 text-xs font-bold transition-colors focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2',
   {
     variants: {
       variant: {
