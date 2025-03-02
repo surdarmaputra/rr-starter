@@ -16,7 +16,7 @@ exports[`Pagination > renders snapshot 1`] = `
       >
         <a
           aria-label="Go to previous page"
-          class="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-semibold ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 text-secondary hover:bg-secondary-hover hover:text-white h-10 px-4 py-2 gap-1 pl-2.5"
+          class="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-semibold ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 text-secondary hover:bg-secondary-hover hover:text-white h-11 px-4 py-2 gap-1 pl-2.5"
           data-testid="PaginationPrevious-testid"
           href="#"
         >
@@ -100,7 +100,7 @@ exports[`Pagination > renders snapshot 1`] = `
       >
         <a
           aria-label="Go to next page"
-          class="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-semibold ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 text-secondary hover:bg-secondary-hover hover:text-white h-10 px-4 py-2 gap-1 pr-2.5"
+          class="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-semibold ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 text-secondary hover:bg-secondary-hover hover:text-white h-11 px-4 py-2 gap-1 pr-2.5"
           data-testid="PaginationNext-testid"
           href="#"
         >

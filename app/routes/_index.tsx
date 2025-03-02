@@ -1,14 +1,12 @@
-import { Button } from '~/modules/core/components/Button/Button';
+import LandingPage from '~/modules/landing/pages/LandingPage';
 
 export function meta() {
   return [
-    { title: 'New React Router App' },
-    { name: 'description', content: 'Welcome to React Router!' },
+    { title: 'React Router Starter' },
+    { name: 'description', content: 'React Router Starter' },
   ];
 }
 
-export default function Home() {
-  return (
-    <Button>Test</Button>
-  );
+export default function Index() {
+  return <LandingPage />;
 }
