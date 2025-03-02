@@ -1,5 +1,5 @@
 import pluginJs from '@eslint/js';
-import stylisticTs from '@stylistic/eslint-plugin-ts'
+import stylisticTs from '@stylistic/eslint-plugin-ts';
 import pluginReact from 'eslint-plugin-react';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import unusedImports from 'eslint-plugin-unused-imports';
@@ -10,10 +10,9 @@ import tseslint from 'typescript-eslint';
 export default [
   {
     files: ['**/*.{js,mjs,cjs,ts,tsx}'],
-
   },
   {
-    languageOptions: { globals: {...globals.browser, ...globals.node} },
+    languageOptions: { globals: { ...globals.browser, ...globals.node } },
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
@@ -25,7 +24,7 @@ export default [
     },
     rules: {
       'comma-dangle': ['error', 'always-multiline'],
-      'indent': ['error', 2],
+      indent: ['error', 2],
       'no-console': 'error',
       'no-multi-spaces': [
         'error',
@@ -52,10 +51,10 @@ export default [
       'unused-imports/no-unused-vars': [
         'warn',
         {
-          'vars': 'all',
-          'varsIgnorePattern': '^_',
-          'args': 'after-used',
-          'argsIgnorePattern': '^_',
+          vars: 'all',
+          varsIgnorePattern: '^_',
+          args: 'after-used',
+          argsIgnorePattern: '^_',
         },
       ],
     },
@@ -96,6 +95,7 @@ export default [
       ],
       '@stylistic/ts/semi': 'error',
       '@typescript-eslint/no-shadow': 'error',
+      'unused-imports/no-unused-vars': 'off',
     },
   },
   {
@@ -105,6 +105,6 @@ export default [
     },
   },
   {
-    ignores:['!**/.server', '!**/.client', '**/templates/'],
+    ignores: ['!**/.server', '!**/.client', '**/templates/'],
   },
 ];
