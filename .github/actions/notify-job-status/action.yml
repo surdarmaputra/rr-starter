@@ -7,22 +7,26 @@ inputs:
   webhookUrl:
     description: 'Discord Webhook URL for sending the notifications.'
     required: true
+  status:
+    description: 'Status of the job (success/failure)'
+    required: true
+  notify_when:
+    description: 'When to send notification (always/failure_only)'
+    required: false
+    default: 'always'
 
 runs:
   using: 'composite'
   steps:
-    - name: Notify job failed
+    - name: Notify job status
+      if: inputs.notify_when == 'always' && (inputs.status == 'success' || inputs.status == 'failure') || (inputs.notify_when == 'failure_only' && inputs.status == 'failure')
       uses: rjstone/discord-webhook-notify@v1
-      if: failure()
       with:
-        severity: error
-        details: 'Job FAILED for ${{ inputs.title }}'
-        webhookUrl: ${{ inputs.webhookUrl }}
-
-    - name: Notify job cancelled
-      uses: rjstone/discord-webhook-notify@v1
-      if: cancelled()
-      with:
-        severity: warn
-        details: 'Job CANCELLED for ${{ inputs.title }}'
+        severity: ${{ inputs.status == 'success' && 'info' || 'error' }}
+        details: >-
+          ${{ 
+            inputs.status == 'success' 
+              && format('Job SUCCESS for {0}', inputs.title)
+              || format('Job FAILURE for {0}', inputs.title)
+          }}
         webhookUrl: ${{ inputs.webhookUrl }}

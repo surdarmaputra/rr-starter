@@ -20,7 +20,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Notify job status
+        if: always()
         uses: './.github/actions/notify-job-status'
         with:
           title: 'CI: Validate PR Title'
           webhookUrl: ${{ env.DISCORD_WEBHOOK_URL }}
+          status: ${{ job.status }}
+          notify_when: failure_only

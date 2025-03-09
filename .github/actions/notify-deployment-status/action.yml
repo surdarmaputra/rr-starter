@@ -8,32 +8,28 @@ inputs:
     description: 'Discord Webhook URL for sending the notifications.'
     required: true
   resultUrl:
-    Description: 'URL for the deployment'
+    description: 'URL for the deployment'
     required: true
+  status:
+    description: 'Status of the deployment (success/failure)'
+    required: true
+  notify_when:
+    description: 'When to send notification (always/failure_only)'
+    required: false
+    default: 'always'
 
 runs:
   using: 'composite'
   steps:
-    - name: Notify deployment success
+    - name: Notify deployment status
+      if: inputs.notify_when == 'always' && (inputs.status == 'success' || inputs.status == 'failure') || (inputs.notify_when == 'failure_only' && inputs.status == 'failure')
       uses: rjstone/discord-webhook-notify@v1
-      if: success()
       with:
-        severity: info
-        details: 'Deployment SUCCESS for ${{ inputs.title }}. Visit ${{ inputs.resultUrl }}'
-        webhookUrl: ${{ inputs.webhookUrl }}
-
-    - name: Notify deployment failed
-      uses: rjstone/discord-webhook-notify@v1
-      if: failure()
-      with:
-        severity: error
-        details: 'Deployment FAILED for ${{ inputs.title }}'
-        webhookUrl: ${{ inputs.webhookUrl }}
-
-    - name: Notify deployment cancelled
-      uses: rjstone/discord-webhook-notify@v1
-      if: cancelled()
-      with:
-        severity: warn
-        details: 'Deployment CANCELLED for ${{ inputs.title }}'
+        severity: ${{ inputs.status == 'success' && 'info' || 'error' }}
+        details: >-
+          ${{ 
+            inputs.status == 'success' 
+              && format('Deployment SUCCESS for {0}. Visit {1}', inputs.title, inputs.resultUrl)
+              || format('Deployment FAILURE for {0}', inputs.title)
+          }}
         webhookUrl: ${{ inputs.webhookUrl }}

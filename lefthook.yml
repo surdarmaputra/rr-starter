@@ -12,3 +12,8 @@ pre-commit:
     lint:
       glob: '*.{js,ts,tsx}'
       run: bun lint:fix {staged_files} && git add {staged_files}
+
+commit-msg:
+  commands:
+    check-commit-message:
+      run: ./scripts/check-commit-message.sh {1}
